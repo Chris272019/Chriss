@@ -50,11 +50,38 @@
 
 /* Skills heading */
 .skills h2 {
-  font-size: -3.7rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
   backface-visibility: hidden; /* Hide when flipped */
+}
+.aurora-text {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #00ff00, #ffff00, #ff00ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Ensure text color is transparent */
+  color: transparent;
+  animation: aurora 3s ease infinite;
+}
+
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.aurora-text {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8);
 }
 
 /* Skills list */
