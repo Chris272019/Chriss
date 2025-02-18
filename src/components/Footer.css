@@ -1,0 +1,33 @@
+.footer {
+  background: linear-gradient(135deg, #121212, #1e1e1e);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-top: 3px solid #ff4b2b;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.footer p {
+  margin: 0;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer:hover p {
+  color: #ff4b2b;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  width: 80px;
+  height: 3px;
+  background: #ff4b2b;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}

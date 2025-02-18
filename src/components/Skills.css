@@ -1,0 +1,83 @@
+/* Skills section container */
+.skills {
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37); /* Soft shadow for depth */
+  backdrop-filter: blur(30px);
+  max-width: 48%;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+  perspective: 1000px; /* Adds perspective to the 3D effect */
+  cursor: pointer;
+  transition: transform 0.6s;
+}
+
+/* Hover effect to flip the skills section */
+.skills:hover .skills-inner {
+  transform: rotateY(180deg); /* Flip the content */
+}
+
+.skills-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* Front of the card: Skills title and list */
+.skills .skills-front {
+  backface-visibility: hidden; /* Hide when flipped */
+}
+
+/* Back of the card: Skills description or additional content */
+.skills .skills-back {
+  transform: rotateY(180deg); /* Initially rotated */
+  backface-visibility: hidden; /* Hide when flipped */
+  margin-top: -3.2rem;;
+}
+
+/* Skills heading */
+.skills h2 {
+  font-size: -3.7rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  backface-visibility: hidden; /* Hide when flipped */
+}
+
+/* Skills list */
+.skills ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  backface-visibility: hidden; /* Prevents the skill list from showing when flipped */
+}
+
+.skills li {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.skills li:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}

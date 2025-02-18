@@ -1,0 +1,134 @@
+/* About section container */
+.about {
+  min-height: 44vh;
+  padding: 1rem 1rem;
+
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37); /* Soft shadow for depth */
+  max-width: 31%;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: rem;
+  backdrop-filter: blur(30px); /* Increased blur for stronger frosted glass effect */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Front of the card - About Me heading */
+/* Flip effect for the card */
+.about-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; /* Ensure 3D flip works */
+  transition: transform 0.6s ease-in-out; /* Smooth flip transition */
+}
+
+/* Front of the card - About Me heading */
+.about-card-front,
+.about-card-back {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backface-visibility: hidden; /* Hides the back when flipped */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Back of the card - Paragraph text */
+.about-card-back {
+  transform: rotateY(180deg); /* Rotate the back by 180deg to flip it */
+}
+
+
+
+/* Optional: Add more styling for inner content */
+.about h2 {
+  font-size: 2.5rem; /* Adjusted for Glassmorphism style */
+  color: #ffffff;
+  margin-bottom: -15.8rem;
+  position: relative;
+  display: inline-block;
+}
+
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ffffff;
+  max-width: 80%;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards 0.3s;
+}
+
+/* Back of the card - Paragraph text */
+.about-card-back {
+  transform: rotateY(180deg); /* Rotate the back by 180deg to flip it */
+}
+
+/* Hover effect for the entire card */
+.about:hover .about-card {
+  transform: rotateY(180deg); /* Flips the entire card */
+}
+/* Optional: Add more styling for inner content */
+.about h2 {
+  font-size: 2.5rem; /* Adjusted for Glassmorphism style */
+  color: #ffffff;
+  margin-bottom: -13.8rem;
+  position: relative;
+  display: inline-block;
+}
+
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ffffff;
+  max-width: 80%;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards 0.3s;
+}
+
+/* Fade in and slide up animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .about {
+    padding: 2rem 1rem;
+  }
+
+  .about h2 {
+    font-size: 2rem; /* Adjusted font size */
+  }
+
+  .about p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about h2 {
+    font-size: 1.8rem; /* Further reduced heading size */
+  }
+
+  .about p {
+    font-size: 0.9rem;
+    max-width: 95%;
+  }
+}
