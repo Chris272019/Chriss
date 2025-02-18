@@ -9,7 +9,7 @@ function Skills() {
       <div className="skills-inner">
         {/* Front of the card */}
         <div className="skills-front">
-          <h2>Skills</h2>
+          <h2 className="aurora-text">Skills</h2>
         </div>
         {/* Back of the card: Display skills list */}
         <div className="skills-back">
