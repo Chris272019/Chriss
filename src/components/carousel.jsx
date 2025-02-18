@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './carousel.css';
 
 const images = [
-    'src/images/2.webp',
-    'src/images/3.jpg',
-    'src/images/1.jpg',
-    'src/images/4.jpg',
-    'src/images/5.jpg',
+    'images/2.webp',
+    'images/3.jpg',
+    'images/1.jpg',
+    'images/4.jpg',
+    'images/5.jpg',
 
     // Add more images here if you have them
 ];
