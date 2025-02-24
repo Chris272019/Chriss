@@ -2,10 +2,9 @@ import React from "react";
 import Header from "./components/Header";
 import About from "./components/About";
 import Skills from "./components/Skills";
-
-import Carousel from "./components/Carousel";
+import Carousel from "./components/carousel";
 import Contests from "./components/Contests";
-import CareerGoals from "./components/CareerGoals"; // Import new component
+import CareerGoals from "./components/careergoals"; // Import new component
 import CallToAction from "./components/calltoaction";
 import Personaltouch from "./components/personaltouch";
 import "./App.css";

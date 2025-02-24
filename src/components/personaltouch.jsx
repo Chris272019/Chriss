@@ -11,8 +11,8 @@ const PersonalTouch = () => {
         <div className="personal-card-back">
           <ul>
             <li>🎨 <strong>Hobbies</strong>: I enjoy coding, photography, and gaming.</li>
-            <li>✈️ <strong>Trips in Life</strong>: I once took a spontaneous road trip with no set destination!</li>
-            <li>🤔 <strong>Fun Fact</strong>: I can type over 100 words per minute. Yes, I checked! 😆</li>
+            <li>✈️ <strong>Trips in Life</strong>: Planning to travel the whole Philippines</li>
+            <li>🤔 <strong>Fun Fact</strong>: Proficient in backend developing rather than frontend 😆</li>
           </ul>
         </div>
       </div>
