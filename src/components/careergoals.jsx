@@ -1,9 +1,9 @@
 import React from "react";
-import "./Careergoals.css"; // Importing the CSS file
+import "./CareerGoals.css"; // Importing the CSS file
 
 const CareerGoals = () => {
   return (
-    <div id="career-goals" className="career-goals">
+    <div className="career-goals">
       <div className="career-goals-card">
         <div className="career-goals-card-front">
           <h2 className="aurora-text">Career Goals</h2>
