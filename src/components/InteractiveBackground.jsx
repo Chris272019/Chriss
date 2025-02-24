@@ -1,13 +1,11 @@
-"use client"
-
-import { useCallback } from "react"
-import Particles from "react-tsparticles"
-import { loadFull } from "tsparticles"
+import React, { useCallback } from "react";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
 
 const InteractiveBackground = () => {
   const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine)
-  }, [])
+    await loadSlim(engine);
+  }, []);
 
   return (
     <Particles
@@ -28,19 +26,17 @@ const InteractiveBackground = () => {
             },
             onHover: {
               enable: true,
-              mode: "grab",
+              mode: "repulse",
             },
             resize: true,
           },
           modes: {
-            grab: {
-              distance: 140,
-              links: {
-                opacity: 1,
-              },
-            },
             push: {
               quantity: 4,
+            },
+            repulse: {
+              distance: 200,
+              duration: 0.4,
             },
           },
         },
@@ -52,7 +48,7 @@ const InteractiveBackground = () => {
             color: "#ffffff",
             distance: 150,
             enable: true,
-            opacity: 0.5,
+            opacity: 0.3,
             width: 1,
           },
           move: {
@@ -70,10 +66,10 @@ const InteractiveBackground = () => {
               enable: true,
               area: 800,
             },
-            value: 80,
+            value: 50,
           },
           opacity: {
-            value: 0.5,
+            value: 0.3,
           },
           shape: {
             type: "circle",
@@ -85,8 +81,7 @@ const InteractiveBackground = () => {
         detectRetina: true,
       }}
     />
-  )
-}
+  );
+};
 
-export default InteractiveBackground
-
+export default InteractiveBackground;
