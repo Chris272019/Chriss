@@ -15,8 +15,7 @@ const EnteredContests = () => {
           <ul>
             <li>
               <strong>Have not  joined any Contest due to School works</strong>
-            </li>
-            </li>
+            </li> 
           </ul>
         </div>
       </div>
