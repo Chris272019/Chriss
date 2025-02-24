@@ -1,5 +1,5 @@
 import React from "react";
-import "./CareerGoals.css"; // Importing the CSS file
+import "./Careergoals.css"; // Importing the CSS file
 
 const CareerGoals = () => {
   return (
