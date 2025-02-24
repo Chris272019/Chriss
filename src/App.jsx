@@ -2,8 +2,12 @@ import React from "react";
 import Header from "./components/Header";
 import About from "./components/About";
 import Skills from "./components/Skills";
-import Footer from "./components/Footer";
-import Carousel from "./components/carousel";
+
+import Carousel from "./components/Carousel";
+import Contests from "./components/Contests";
+import CareerGoals from "./components/CareerGoals"; // Import new component
+import CallToAction from "./components/calltoaction";
+import Personaltouch from "./components/personaltouch";
 import "./App.css";
 
 function App() {
@@ -14,8 +18,12 @@ function App() {
       <div className="card-container">
         <About />
         <Skills />
+        <Contests />
+        <CareerGoals /> {/* Add Career Goals component */}
+        <CallToAction />
+        <Personaltouch />
       </div>
-      <Footer />
+
     </div>
   );
 }

@@ -11,34 +11,42 @@
   align-items: center;
   justify-content: center;
 }
-/* Container for the About and Skills cards */
 .card-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* Stack all cards vertically */
+  align-items: center; /* Center cards horizontally */
   gap: 2rem;
-  margin: 21rem 4rem;
-  margin-top: unset;
+  padding: 2rem;
+  width: 100%;
 }
 
-/* Styling for each card (About and Skills) */
+/* Styling for each card */
 .card-container > div {
-  flex: 1;
-  max-width: 48%; /* Ensures the cards are responsive */
+  width: 80%; /* Adjust width for better alignment */
+  max-width: 700px; /* Prevent excessive stretching */
   padding: 2rem;
   border: 2px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
   backdrop-filter: blur(30px);
   border-radius: 8px;
+  min-width: 280px; /* Prevents cards from becoming too small */
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Responsive design for small screens */
+/* Hover effect */
+.card-container > div:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .card-container {
-    flex-direction: column; /* Stack cards vertically on small screens */
-    gap: 1.5rem;
+    width: 100%;
+    padding: 1rem;
   }
 
   .card-container > div {
-    max-width: 100%; /* Cards take up full width on small screens */
+    width: 90%;
   }
 }
+

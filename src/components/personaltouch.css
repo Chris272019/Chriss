@@ -1,0 +1,107 @@
+.personal-touch {
+    min-height: 44vh;
+    padding: 1rem 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+    max-width: 31%;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(30px);
+    transition: transform 0.3s ease;
+  }
+  
+  .personal-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+  }
+  
+  .personal-card-front,
+  .personal-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .personal-card-back {
+    transform: rotateY(180deg);
+  }
+  
+  .personal-touch:hover .personal-card {
+    transform: rotateY(180deg);
+  }
+  
+  .aurora-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #00ff00, #ffff00, #ff00ff);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: aurora 3s ease infinite;
+  }
+  
+  @keyframes aurora {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .personal-card-back ul {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ffffff;
+    max-width: 80%;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards 0.3s;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .personal-card-back li {
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .personal-touch {
+      padding: 2rem 1rem;
+    }
+  
+    .aurora-text {
+      font-size: 2rem;
+    }
+  
+    .personal-card-back ul {
+      font-size: 1rem;
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .aurora-text {
+      font-size: 1.8rem;
+    }
+  
+    .personal-card-back ul {
+      font-size: 0.9rem;
+      max-width: 95%;
+    }
+  }
+  
