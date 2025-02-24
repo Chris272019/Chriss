@@ -2,7 +2,6 @@ import React from "react";
 import Header from "./components/Header";
 import About from "./components/About";
 import Skills from "./components/Skills";
-
 import Carousel from "./components/carousel";
 import Contests from "./components/Contests";
 import CareerGoals from "./components/CareerGoals"; // Import new component
