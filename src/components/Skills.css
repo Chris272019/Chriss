@@ -1,51 +1,17 @@
-/* Skills section container */
+/* Skills section container - Aligned to Right */
 .skills {
   color: white;
-  text-align: center;
+  text-align: left;
   padding: 50px 20px;
-  border: 2px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37); /* Soft shadow for depth */
-  backdrop-filter: blur(30px);
-  max-width: 48%;
-  width: 90%;
+  max-width: 85%;
+  width: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   margin-top: 4rem;
-  perspective: 1000px; /* Adds perspective to the 3D effect */
-  cursor: pointer;
-  transition: transform 0.6s;
-}
-
-/* Hover effect to flip the skills section */
-.skills:hover .skills-inner {
-  transform: rotateY(180deg); /* Flip the content */
-}
-
-.skills-inner {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.5s;
-  transform-style: preserve-3d;
-  position: relative;
-}
-
-/* Front of the card: Skills title and list */
-.skills .skills-front {
-  backface-visibility: hidden; /* Hide when flipped */
-}
-
-/* Back of the card: Skills description or additional content */
-.skills .skills-back {
-  transform: rotateY(180deg); /* Initially rotated */
-  backface-visibility: hidden; /* Hide when flipped */
-  margin-top: -3.2rem;;
+  padding-right: 10%;
 }
 
 /* Skills heading */
@@ -54,57 +20,70 @@
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  backface-visibility: hidden; /* Hide when flipped */
-}
-.aurora-text {
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-  background: linear-gradient(45deg, #ff00ff, #00ffff, #00ff00, #ffff00, #ff00ff);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent; /* Ensure text color is transparent */
-  color: transparent;
-  animation: aurora 3s ease infinite;
-}
-
-@keyframes aurora {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-.aurora-text {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8);
+  text-align: right;
 }
 
 /* Skills list */
-.skills ul {
+.skills-list {
   list-style: none;
   padding: 0;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 15px;
   flex-wrap: wrap;
-  backface-visibility: hidden; /* Prevents the skill list from showing when flipped */
 }
 
-.skills li {
+.skills-list li {
   background: rgba(255, 255, 255, 0.2);
-  padding: 12px 20px;
+  padding: 12px 13px;
   font-size: 1.2rem;
   font-weight: bold;
   border-radius: 8px;
   transition: 0.3s;
 }
 
-.skills li:hover {
+.skills-list li:hover {
   background: rgba(255, 255, 255, 0.4);
   transform: scale(1.1);
 }
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .skills {
+    padding-right: 0;
+    padding-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .skills h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .skills-list {
+    justify-content: center;
+  }
+
+  .skills-list li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills {
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 100%;
+  }
+
+  .skills h2 {
+    font-size: 1.8rem;
+  }
+
+  .skills-list li {
+    font-size: 0.9rem;
+    padding: 10px 11px;
+  }
+}
+

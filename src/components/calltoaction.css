@@ -1,124 +1,105 @@
+/* Call to Action Section - Fully Left Aligned */
 .call-to-action {
-    min-height: 44vh;
-    padding: 1rem 1rem;
-    border: 2px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
-    max-width: 31%;
-    width: 90%;
-    margin: auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(30px);
-    transition: transform 0.3s ease;
-  }
-  
-  .cta-card {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease-in-out;
-  }
-  
-  .cta-card-front,
-  .cta-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  .cta-card-back {
-    transform: rotateY(180deg);
-  }
-  
-  .call-to-action:hover .cta-card {
-    transform: rotateY(180deg);
-  }
-  
-  .aurora-text {
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-    background: linear-gradient(45deg, #ff00ff, #00ffff, #00ff00, #ffff00, #ff00ff);
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: aurora 3s ease infinite;
-  }
-  
-  @keyframes aurora {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  
-  .cta-card-back p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #ffffff;
+  min-height: 44vh;
+  padding: 1rem 1rem;
+  max-width: 40%;
+  width: 90%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  margin-left: 5%;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* Call to Action Heading */
+.call-to-action .aurora-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: left;
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #00ff00, #ffff00, #ff00ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aurora 3s ease infinite;
+}
+
+/* CTA Text */
+.cta-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ffffff;
+  max-width: 80%;
+  margin-top: 1rem;
+}
+
+/* CTA Button */
+.cta-button {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #ff0000, #ff7300);
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background: linear-gradient(45deg, #ff7300, #ff0000);
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .call-to-action {
+    padding: 2rem 1rem;
     max-width: 80%;
-    margin: 0 auto;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.5s ease forwards 0.3s;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    text-align: center;
   }
-  
+
+  .call-to-action .aurora-text {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .cta-text {
+    font-size: 1rem;
+    max-width: 90%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .call-to-action {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .call-to-action .aurora-text {
+    font-size: 1.8rem;
+  }
+
+  .cta-text {
+    font-size: 0.9rem;
+    max-width: 95%;
+  }
+
   .cta-button {
-    margin-top: 1rem;
-    padding: 0.8rem 1.5rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #fff;
-    background: linear-gradient(45deg, #ff0000, #ff7300);
-    border: none;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
   }
-  
-  .cta-button:hover {
-    background: linear-gradient(45deg, #ff7300, #ff0000);
-    transform: scale(1.05);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .call-to-action {
-      padding: 2rem 1rem;
-    }
-  
-    .aurora-text {
-      font-size: 2rem;
-    }
-  
-    .cta-card-back p {
-      font-size: 1rem;
-      max-width: 90%;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .aurora-text {
-      font-size: 1.8rem;
-    }
-  
-    .cta-card-back p {
-      font-size: 0.9rem;
-      max-width: 95%;
-    }
-  
-    .cta-button {
-      font-size: 1rem;
-      padding: 0.7rem 1.2rem;
-    }
-  }
-  
+}
+

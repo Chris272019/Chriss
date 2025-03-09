@@ -14,9 +14,9 @@ const EnteredContests = () => {
         <div className="contests-card-back">
           <ul>
             <li>
-              <strong>Have not joined any Contest due to School works</strong>
-            </li>
-          </ul>
+              <strong>Have not  joined any Contest due to School works</strong>
+            </li> 
+          </ul> 
         </div>
       </div>
     </div>
