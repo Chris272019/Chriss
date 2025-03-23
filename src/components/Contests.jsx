@@ -1,5 +1,4 @@
-import React from "react";
-import "./Contests.css"; // Import the CSS file for styles
+import "./Contests.css" // Import the CSS file for styles
 
 const EnteredContests = () => {
   return (
@@ -14,13 +13,14 @@ const EnteredContests = () => {
         <div className="contests-card-back">
           <ul>
             <li>
-              <strong>Have not  joined any Contest due to School works</strong>
-            </li> 
-          </ul> 
+              <strong>Have not joined any Contest due to School works</strong>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default EnteredContests;
+export default EnteredContests
+
