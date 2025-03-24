@@ -63,7 +63,6 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {currentYear} Developer Portfolio. All rights reserved.</p>
           <div className="footer-social">
             <a href="https://github.com" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-github"></i>

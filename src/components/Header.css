@@ -67,8 +67,11 @@ nav a {
   font-size: 1rem;
   transition: all 0.3s ease;
   position: relative;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
   cursor: pointer;
+  border-radius: 8px;
+  background: transparent;
+  backdrop-filter: blur(0px);
 }
 
 nav a::after {
@@ -77,24 +80,29 @@ nav a::after {
   width: 0;
   height: 2px;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: var(--primary);
-  transition: width 0.3s ease, transform 0.3s ease;
-  transform-origin: left;
+  transition: all 0.3s ease;
+  transform-origin: center;
 }
 
 nav a:hover {
   color: var(--primary);
   transform: translateY(-1px);
-}
-
-nav a:hover::after {
-  width: 100%;
-  transform: scaleX(1);
+  background: rgba(14, 165, 233, 0.1);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);
 }
 
 nav a:active {
   transform: translateY(0);
+  background: rgba(14, 165, 233, 0.2);
+}
+
+nav a:hover::after {
+  width: 80%;
+  transform: translateX(-50%) scaleX(1);
 }
 
 .mobile-menu-btn {
@@ -236,6 +244,32 @@ nav a:active {
 
   .mobile-menu {
     display: flex;
+  }
+}
+
+/* Add smooth scroll behavior to the whole page */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adjust this value based on your header height */
+}
+
+/* Add transition effect for sections */
+section {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+section:target {
+  animation: sectionHighlight 1s ease;
+}
+
+@keyframes sectionHighlight {
+  0% {
+    transform: translateY(20px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 

@@ -41,9 +41,13 @@ function Header() {
     e.preventDefault()
     const targetElement = document.getElementById(targetId)
     if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+      const headerOffset = 80 // Adjust this value based on your header height
+      const elementPosition = targetElement.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
       })
     }
     setMobileMenuOpen(false)

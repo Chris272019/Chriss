@@ -28,7 +28,7 @@ const InteractiveBackground = () => {
             },
             onHover: {
               enable: true,
-              mode: "attract",
+              mode: "grab",
             },
             resize: true,
           },
@@ -36,11 +36,12 @@ const InteractiveBackground = () => {
             push: {
               quantity: 4,
             },
-            attract: {
+            grab: {
               distance: 200,
-              duration: 0.4,
-              speed: 1,
-              factor: 1,
+              links: {
+                opacity: 0.5,
+              },
+              size: 1,
             },
           },
         },
