@@ -1,4 +1,4 @@
-import "./careergoals.css"
+import "./Careergoals.css"
 
 const CareerGoals = () => {
   // Career goals data
