@@ -1,6 +1,6 @@
 import "./careergoals.css"
 
-const CareerGoals = () => {
+const careergoals = () => {
   // Career goals data
   const goals = [
     {
@@ -58,5 +58,5 @@ const CareerGoals = () => {
   )
 }
 
-export default CareerGoals
+export default careergoals
 
