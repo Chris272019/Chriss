@@ -37,7 +37,7 @@ function App() {
                 </div>
               </>
             } />
-            <Route path="/blog/*" element={<Blog />} />
+            <Route path="/blog" element={<Blog />} />
             <Route path="/blog/day1" element={
               <div className="blog-content">
                 <Link to="/blog">← Back</Link>
