@@ -62,22 +62,22 @@ function App() {
                     <h3>Intramuros: The Walled City</h3>
                     <p>My journey began in Intramuros, the historic walled area that was the center of Spanish colonial rule. Walking through its cobblestone streets felt like stepping back in time.</p>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day1/day1 (1).jpg" alt="Intramuros view" />
-                      <img src="/src/assets/day1/day1 (2).jpg" alt="Intramuros architecture" />
+                      <img src="/assets/day1/day1 (1).jpg" alt="Intramuros view" />
+                      <img src="/assets/day1/day1 (2).jpg" alt="Intramuros architecture" />
                     </div>
 
                     <h3>Fort Santiago: A Historical Fortress</h3>
                     <p>Next, I visited Fort Santiago, a citadel built by Spanish navigator and governor Miguel López de Legazpi. The fort's walls and dungeons tell stories of the past, including its role during World War II.</p>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day1/day1 (3).jpg" alt="Fort Santiago entrance" />
-                      <img src="/src/assets/day1/day1 (4).jpg" alt="Fort Santiago courtyard" />
+                      <img src="/assets/day1/day1 (3).jpg" alt="Fort Santiago entrance" />
+                      <img src="/assets/day1/day1 (4).jpg" alt="Fort Santiago courtyard" />
                     </div>
 
                     <h3>Rizal Park: A Tribute to a National Hero</h3>
                     <p>The day ended at Rizal Park, a beautiful urban park dedicated to the Philippines' national hero, José Rizal. The park's monuments and gardens provide a peaceful retreat in the heart of the city.</p>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day1/day1 (5).jpg" alt="Rizal Park monument" />
-                      <img src="/src/assets/day1/day1 (6).jpg" alt="Rizal Park gardens" />
+                      <img src="/assets/day1/day1 (5).jpg" alt="Rizal Park monument" />
+                      <img src="/assets/day1/day1 (6).jpg" alt="Rizal Park gardens" />
                     </div>
 
                     <h3>Memorable Moments</h3>
@@ -91,10 +91,10 @@ function App() {
 
                     <h3>More Photos</h3>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day1/day1 (7).jpg" alt="Manila view" />
-                      <img src="/src/assets/day1/day1 (8).jpg" alt="Historical building" />
-                      <img src="/src/assets/day1/day1 (9).jpg" alt="Park scenery" />
-                      <img src="/src/assets/day1/day1 (10).jpg" alt="City landscape" />
+                      <img src="/assets/day1/day1 (7).jpg" alt="Manila view" />
+                      <img src="/assets/day1/day1 (8).jpg" alt="Historical building" />
+                      <img src="/assets/day1/day1 (9).jpg" alt="Park scenery" />
+                      <img src="/assets/day1/day1 (10).jpg" alt="City landscape" />
                     </div>
 
                     <p>It was a day filled with history, culture, and beautiful sights. I'm looking forward to exploring more of Manila's treasures tomorrow!</p>
@@ -112,32 +112,32 @@ function App() {
                     <h3>Historical Paintings of Olongapo</h3>
                     <p>The first part of our journey took us through a collection of historical paintings that depict Olongapo's early days. These artworks show the traditional way of life, the fishing communities, and the natural beauty of the area before modernization.</p>
                     <div className="blog-gallery">
-                      <img src="/public/assets/day2/day2 (1).jpg" alt="Historical painting of Olongapo" />
-                      <img src="/public/assets/day2/day2 (2).jpg" alt="Traditional fishing village scene" />
-                      <img src="/public/assets/day2/day2 (3).jpg" alt="Early settlement artwork" />
+                      <img src="/assets/day2/day2 (1).jpg" alt="Historical painting of Olongapo" />
+                      <img src="/assets/day2/day2 (2).jpg" alt="Traditional fishing village scene" />
+                      <img src="/assets/day2/day2 (3).jpg" alt="Early settlement artwork" />
                     </div>
 
                     <h3>Artistic Evolution</h3>
                     <p>As we moved through the exhibition, we saw how the art evolved to reflect the changes in Olongapo's landscape and society. The paintings showed the transition from rural to urban, the influence of different cultures, and the city's growth over time.</p>
                     <div className="blog-gallery">
-                      <img src="/public/assets/day2/day2 (4).jpg" alt="Urban development artwork" />
-                      <img src="/public/assets/day2/day2 (5).jpg" alt="Cultural fusion painting" />
-                      <img src="/public/assets/day2/day2 (6).jpg" alt="Modern cityscape art" />
+                      <img src="/assets/day2/day2 (4).jpg" alt="Urban development artwork" />
+                      <img src="/assets/day2/day2 (5).jpg" alt="Cultural fusion painting" />
+                      <img src="/assets/day2/day2 (6).jpg" alt="Modern cityscape art" />
                     </div>
 
                     <h3>Subic Bay Connection</h3>
                     <p>The artworks also highlighted Olongapo's connection to Subic Bay, showing how the natural harbor influenced the city's development and became an integral part of its identity.</p>
                     <div className="blog-gallery">
-                      <img src="/public/assets/day2/day2 (7).jpg" alt="Subic Bay harbor painting" />
-                      <img src="/public/assets/day2/day2 (8).jpg" alt="Maritime history artwork" />
-                      <img src="/public/assets/day2/day2 (9).jpg" alt="Coastal community scene" />
+                      <img src="/assets/day2/day2 (7).jpg" alt="Subic Bay harbor painting" />
+                      <img src="/assets/day2/day2 (8).jpg" alt="Maritime history artwork" />
+                      <img src="/assets/day2/day2 (9).jpg" alt="Coastal community scene" />
                     </div>
 
                     <h3>Modern Interpretations</h3>
                     <p>The exhibition concluded with contemporary artworks that reinterpret Olongapo's history through modern artistic styles, showing how the city's past continues to inspire new generations of artists.</p>
                     <div className="blog-gallery">
-                      <img src="/public/assets/day2/day2 (10).jpg" alt="Contemporary historical art" />
-                      <img src="/public/assets/day2/day2 (11).jpg" alt="Modern interpretation of history" />
+                      <img src="/assets/day2/day2 (10).jpg" alt="Contemporary historical art" />
+                      <img src="/assets/day2/day2 (11).jpg" alt="Modern interpretation of history" />
                     </div>
 
                     <h3>Highlights of the Day</h3>
