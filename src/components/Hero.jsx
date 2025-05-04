@@ -1,50 +1,46 @@
-import "./Hero.css"
+import React from 'react';
+import ParticleText from './ParticleText';
+import SoundButton from './SoundButton';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import './Hero.css';
 
 const Hero = () => {
   return (
     <section id="home" className="hero">
       <div className="hero-content">
-        <h1>
-          <span className="greeting">Hello, I'm</span>
-          <span className="name">Chris</span>
-          <span className="title">Backend Developer</span>
-        </h1>
-        <p className="hero-description">
-          I build robust, scalable server-side applications with a focus on performance and security.
-        </p>
-        <div className="hero-cta">
-          <a href="#projects" className="btn">
-            View My Work
-          </a>
-          <a href="#contact" className="btn btn-outline">
-            Contact Me
-          </a>
+        <div className="hero-text">
+          <h2 className="hero-greeting">Hello, I'm</h2>
+          <div className="particle-text-wrapper">
+            <ParticleText />
+          </div>
+          <hr className="hero-divider" />
+          <p className="description">
+            I build robust, scalable server-side applications with a focus on performance and security.
+          </p>
+          <div className="cta-buttons">
+            <SoundButton as="a" href="#projects" className="btn">
+              View My Work
+            </SoundButton>
+            <SoundButton as="a" href="#contact" className="btn btn-outline">
+              Contact Me
+            </SoundButton>
+          </div>
         </div>
-        <div className="hero-social">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <i className="fab fa-github"></i>
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <i className="fab fa-linkedin"></i>
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <i className="fab fa-twitter"></i>
-          </a>
-        </div>
-      </div>
-      <div className="scroll-indicator">
-        <div className="mouse">
-          <div className="wheel"></div>
-        </div>
-        <div className="arrow">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div className="social-links">
+          <SoundButton as="a" href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link">
+            <FaGithub />
+          </SoundButton>
+          <SoundButton as="a" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">
+            <FaLinkedin />
+          </SoundButton>
+          <SoundButton as="a" href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link">
+            <FaTwitter />
+          </SoundButton>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
 

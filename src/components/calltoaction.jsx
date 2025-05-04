@@ -2,6 +2,12 @@
 
 import { useState } from "react"
 import "./calltoaction.css"
+import emailjs from "@emailjs/browser"
+import SoundButton from "./SoundButton"
+import { playRandomSound } from "../utils/soundEffects"
+
+// Initialize EmailJS with your public key
+emailjs.init("Ejdp3wZN6QUwoua2Y")
 
 const CallToAction = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +15,11 @@ const CallToAction = () => {
     email: "",
     subject: "",
     message: "",
+  })
+  const [status, setStatus] = useState({
+    submitting: false,
+    submitted: false,
+    error: null
   })
 
   const handleChange = (e) => {
@@ -19,18 +30,50 @@ const CallToAction = () => {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Here you would typically send the form data to a server
-    console.log("Form submitted:", formData)
-    alert("Thanks for your message! I'll get back to you soon.")
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    })
+    setStatus({ submitting: true, submitted: false, error: null })
+
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: "christiantan2719@gmail.com"
+      }
+
+      const response = await emailjs.send(
+        "service_q5vz1zk", // Your service ID
+        "template_67opfg2", // Your new template ID
+        templateParams
+      )
+
+      if (response.status === 200) {
+        setStatus({ submitting: false, submitted: true, error: null })
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        })
+      } else {
+        throw new Error("Failed to send message")
+      }
+    } catch (error) {
+      console.error("EmailJS error:", error)
+      setStatus({ 
+        submitting: false, 
+        submitted: false, 
+        error: "Failed to send message. Please try again or contact me directly at christiantan2719@gmail.com" 
+      })
+    }
+  }
+
+  const handleLinkedInClick = (e) => {
+    e.preventDefault()
+    playRandomSound()
+    window.open("https://www.linkedin.com/in/christian-tan-403048302/", "_blank", "noopener,noreferrer")
   }
 
   return (
@@ -43,12 +86,12 @@ const CallToAction = () => {
             something amazing together.
           </p>
           <div className="cta-buttons">
-            <a href="mailto:contact@example.com" className="btn">
+            <SoundButton as="a" href="mailto:christiantan2719@gmail.com" className="btn">
               <i className="fas fa-envelope"></i> Email Me
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+            </SoundButton>
+            <SoundButton as="a" href="https://www.linkedin.com/in/christian-tan-403048302/" onClick={handleLinkedInClick} className="btn btn-outline">
               <i className="fab fa-linkedin"></i> Connect on LinkedIn
-            </a>
+            </SoundButton>
           </div>
 
           <div className="contact-form">
@@ -100,9 +143,23 @@ const CallToAction = () => {
                   required
                 ></textarea>
               </div>
-              <button type="submit" className="form-submit">
-                Send Message
-              </button>
+              <SoundButton 
+                type="submit" 
+                className="form-submit"
+                disabled={status.submitting}
+              >
+                {status.submitting ? "Sending..." : "Send Message"}
+              </SoundButton>
+              {status.submitted && (
+                <div className="success-message">
+                  Message sent successfully! I'll get back to you soon.
+                </div>
+              )}
+              {status.error && (
+                <div className="error-message">
+                  {status.error}
+                </div>
+              )}
             </form>
           </div>
         </div>

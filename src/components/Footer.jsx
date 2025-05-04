@@ -50,11 +50,6 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                    Twitter
-                  </a>
-                </li>
-                <li>
                   <a href="mailto:contact@example.com">Email</a>
                 </li>
               </ul>

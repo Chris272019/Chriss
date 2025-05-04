@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation, Outlet } from "react-router-dom"
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom"
 import InteractiveBackground from "./components/InteractiveBackground"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
@@ -12,10 +12,90 @@ import Footer from "./components/Footer"
 import Blog from "./components/Blog"
 import "./App.css"
 import { Link } from "react-router-dom"
+import SoundButton from "./components/SoundButton"
+import { playRandomSound } from "./utils/soundEffects"
+
+// Import blog images
+import day1Image1 from "./assets/day1/day1 (1).jpg"
+import day1Image2 from "./assets/day1/day1 (2).jpg"
+import day1Image3 from "./assets/day1/day1 (3).jpg"
+import day1Image4 from "./assets/day1/day1 (4).jpg"
+import day1Image5 from "./assets/day1/day1 (5).jpg"
+import day1Image6 from "./assets/day1/day1 (6).jpg"
+import day1Image7 from "./assets/day1/day1 (7).jpg"
+import day1Image8 from "./assets/day1/day1 (8).jpg"
+import day1Image9 from "./assets/day1/day1 (9).jpg"
+import day1Image10 from "./assets/day1/day1 (10).jpg"
+
+import day2Image1 from "./assets/day2/day2 (1).jpg"
+import day2Image2 from "./assets/day2/day2 (2).jpg"
+import day2Image3 from "./assets/day2/day2 (3).jpg"
+import day2Image4 from "./assets/day2/day2 (4).jpg"
+import day2Image5 from "./assets/day2/day2 (5).jpg"
+import day2Image6 from "./assets/day2/day2 (6).jpg"
+import day2Image7 from "./assets/day2/day2 (7).jpg"
+import day2Image8 from "./assets/day2/day2 (8).jpg"
+import day2Image9 from "./assets/day2/day2 (9).jpg"
+import day2Image10 from "./assets/day2/day2 (10).jpg"
+import day2Image11 from "./assets/day2/day2 (11).jpg"
+
+import day3Image1 from "./assets/day3/National meuseum (1).jpg"
+import day3Image2 from "./assets/day3/National meuseum (2).jpg"
+import day3Image3 from "./assets/day3/National meuseum (3).jpg"
+import day3Image4 from "./assets/day3/Presidential cars.jpg"
+import day3Image5 from "./assets/day3/manuel quezon (1).jpg"
+import day3Image6 from "./assets/day3/manuel quezon (2).jpg"
+import day3Image7 from "./assets/day3/manuel quezon (3).jpg"
+
+// Import remaining blog images
+import day4Image1 from "./assets/day4/Hightech (1).jpg"
+import day4Image2 from "./assets/day4/Hightech (2).jpg"
+import day4Image3 from "./assets/day4/Hightech (3).jpg"
+import day4Image4 from "./assets/day4/Hightech (4).jpg"
+import day4Image5 from "./assets/day4/Hightech (5).jpg"
+import day4Image6 from "./assets/day4/Hightech (6).jpg"
+
+import day5Image1 from "./assets/day5/lrt (1).jpg"
+import day5Image2 from "./assets/day5/lrt (2).jpg"
+import day5Image3 from "./assets/day5/lrt (3).jpg"
+import day5Image4 from "./assets/day5/lrt (4).jpg"
+import day5Image5 from "./assets/day5/lrt (5).jpg"
+import day5Image6 from "./assets/day5/lrt (6).jpg"
+import day5Image7 from "./assets/day5/lrt (7).jpg"
+import day5Image8 from "./assets/day5/traffic engineering (1).jpg"
+import day5Image9 from "./assets/day5/traffic engineering (2).jpg"
+
+import day6Image1 from "./assets/day6/strawberry farm.jpg"
+import day6Image2 from "./assets/day6/chinese bell church (1).jpg"
+import day6Image3 from "./assets/day6/chinese bell church (2).jpg"
+import day6Image4 from "./assets/day6/chinese bell church (3).jpg"
+import day6Image5 from "./assets/day6/chinese bell church (4).jpg"
+import day6Image6 from "./assets/day6/chinese bell church (5).jpg"
+import day6Image7 from "./assets/day6/minesview (1).jpg"
+import day6Image8 from "./assets/day6/minesview (2).jpg"
+import day6Image9 from "./assets/day6/PMA (1).jpg"
+import day6Image10 from "./assets/day6/PMA (2).jpg"
+
+import day7Image1 from "./assets/day7/day7 (1).jpg"
+import day7Image2 from "./assets/day7/day7 (2).jpg"
+import day7Image3 from "./assets/day7/day7 (3).jpg"
 
 function App() {
   const location = useLocation()
+  const navigate = useNavigate()
   const isHomePage = location.pathname === "/"
+
+  const handleBlogLinkClick = (e, path) => {
+    e.preventDefault()
+    playRandomSound()
+    navigate(path)
+  }
+
+  const handleBackClick = (e) => {
+    e.preventDefault()
+    playRandomSound()
+    navigate('/blog')
+  }
 
   return (
     <div className="App">
@@ -38,22 +118,59 @@ function App() {
               </>
             } />
             <Route path="/blog" element={<Blog />}>
-              <Route index element={<div className="blog-content">
-                <h2>Welcome to My Blog</h2>
-                <p>Select a day to read about my journey:</p>
-                <div className="blog-links">
-                  <Link to="/blog/day1">Day 1: Manila's Historical Gems</Link>
-                  <Link to="/blog/day2">Day 2: Olongapo's Art History</Link>
-                  <Link to="/blog/day3">Day 3: Manila's Cultural Heritage</Link>
-                  <Link to="/blog/day4">Day 4: High-Tech Innovations</Link>
-                  <Link to="/blog/day5">Day 5: Urban Transportation</Link>
-                  <Link to="/blog/day6">Day 6: Baguio's Treasures</Link>
-                  <Link to="/blog/day7">Day 7: Farewell to Luzon</Link>
+              <Route index element={
+                <div className="blog-content">
+                  <h1 className="blog-title">My Journey Through Luzon</h1>
+                  <p className="blog-intro">Join me as I explore the rich history, culture, and technological advancements of Luzon, Philippines. Each day brings new discoveries and insights into this fascinating region.</p>
+                  
+                  <div className="blog-timeline">
+                    <div className="timeline-item">
+                      <h3>Day 1: Manila's Historical Gems</h3>
+                      <p>Exploring the iconic landmarks of Manila, including Intramuros, Fort Santiago, and Rizal Park.</p>
+                      <SoundButton as="a" href="/blog/day1" className="read-more" onClick={(e) => handleBlogLinkClick(e, '/blog/day1')}>Read More →</SoundButton>
+                    </div>
+                    
+                    <div className="timeline-item">
+                      <h3>Day 2: Olongapo's Art History</h3>
+                      <p>Discovering the artistic heritage of Olongapo through its remarkable paintings and artworks.</p>
+                      <SoundButton as="a" href="/blog/day2" className="read-more" onClick={(e) => handleBlogLinkClick(e, '/blog/day2')}>Read More →</SoundButton>
+                    </div>
+                    
+                    <div className="timeline-item">
+                      <h3>Day 3: Manila's Cultural Heritage</h3>
+                      <p>Visiting the National Museum Complex and other cultural institutions in Manila.</p>
+                      <SoundButton as="a" href="/blog/day3" className="read-more" onClick={(e) => handleBlogLinkClick(e, '/blog/day3')}>Read More →</SoundButton>
+                    </div>
+                    
+                    <div className="timeline-item">
+                      <h3>Day 4: High-Tech Innovations</h3>
+                      <p>Exploring cutting-edge technology and innovations shaping the future of the Philippines.</p>
+                      <SoundButton as="a" href="/blog/day4" className="read-more" onClick={(e) => handleBlogLinkClick(e, '/blog/day4')}>Read More →</SoundButton>
+                    </div>
+                    
+                    <div className="timeline-item">
+                      <h3>Day 5: Urban Transportation</h3>
+                      <p>Understanding Manila's transportation systems and traffic engineering solutions.</p>
+                      <SoundButton as="a" href="/blog/day5" className="read-more" onClick={(e) => handleBlogLinkClick(e, '/blog/day5')}>Read More →</SoundButton>
+                    </div>
+                    
+                    <div className="timeline-item">
+                      <h3>Day 6: Baguio's Treasures</h3>
+                      <p>Exploring Baguio's unique blend of cultural heritage and natural beauty.</p>
+                      <SoundButton as="a" href="/blog/day6" className="read-more" onClick={(e) => handleBlogLinkClick(e, '/blog/day6')}>Read More →</SoundButton>
+                    </div>
+                    
+                    <div className="timeline-item">
+                      <h3>Day 7: Farewell to Luzon</h3>
+                      <p>Reflecting on the incredible experiences and memories gathered during this journey.</p>
+                      <SoundButton as="a" href="/blog/day7" className="read-more" onClick={(e) => handleBlogLinkClick(e, '/blog/day7')}>Read More →</SoundButton>
+                    </div>
+                  </div>
                 </div>
-              </div>} />
+              } />
               <Route path="day1" element={
                 <div className="blog-content">
-                  <Link to="/blog">← Back</Link>
+                  <SoundButton as="a" href="/blog" className="back-link" onClick={handleBackClick}>← Back</SoundButton>
                   <h2>Day 1: Exploring Manila's Historical Gems</h2>
                   <p className="blog-date">March 15, 2024</p>
                   <div className="blog-post">
@@ -62,22 +179,22 @@ function App() {
                     <h3>Intramuros: The Walled City</h3>
                     <p>My journey began in Intramuros, the historic walled area that was the center of Spanish colonial rule. Walking through its cobblestone streets felt like stepping back in time.</p>
                     <div className="blog-gallery">
-                      <img src="/assets/day1/day1 (1).jpg" alt="Intramuros view" />
-                      <img src="/assets/day1/day1 (2).jpg" alt="Intramuros architecture" />
+                      <img src={day1Image1} alt="Intramuros view" />
+                      <img src={day1Image2} alt="Intramuros architecture" />
                     </div>
 
                     <h3>Fort Santiago: A Historical Fortress</h3>
                     <p>Next, I visited Fort Santiago, a citadel built by Spanish navigator and governor Miguel López de Legazpi. The fort's walls and dungeons tell stories of the past, including its role during World War II.</p>
                     <div className="blog-gallery">
-                      <img src="/assets/day1/day1 (3).jpg" alt="Fort Santiago entrance" />
-                      <img src="/assets/day1/day1 (4).jpg" alt="Fort Santiago courtyard" />
+                      <img src={day1Image3} alt="Fort Santiago entrance" />
+                      <img src={day1Image4} alt="Fort Santiago courtyard" />
                     </div>
 
                     <h3>Rizal Park: A Tribute to a National Hero</h3>
                     <p>The day ended at Rizal Park, a beautiful urban park dedicated to the Philippines' national hero, José Rizal. The park's monuments and gardens provide a peaceful retreat in the heart of the city.</p>
                     <div className="blog-gallery">
-                      <img src="/assets/day1/day1 (5).jpg" alt="Rizal Park monument" />
-                      <img src="/assets/day1/day1 (6).jpg" alt="Rizal Park gardens" />
+                      <img src={day1Image5} alt="Rizal Park monument" />
+                      <img src={day1Image6} alt="Rizal Park gardens" />
                     </div>
 
                     <h3>Memorable Moments</h3>
@@ -91,10 +208,10 @@ function App() {
 
                     <h3>More Photos</h3>
                     <div className="blog-gallery">
-                      <img src="/assets/day1/day1 (7).jpg" alt="Manila view" />
-                      <img src="/assets/day1/day1 (8).jpg" alt="Historical building" />
-                      <img src="/assets/day1/day1 (9).jpg" alt="Park scenery" />
-                      <img src="/assets/day1/day1 (10).jpg" alt="City landscape" />
+                      <img src={day1Image7} alt="Manila view" />
+                      <img src={day1Image8} alt="Historical building" />
+                      <img src={day1Image9} alt="Park scenery" />
+                      <img src={day1Image10} alt="City landscape" />
                     </div>
 
                     <p>It was a day filled with history, culture, and beautiful sights. I'm looking forward to exploring more of Manila's treasures tomorrow!</p>
@@ -103,7 +220,7 @@ function App() {
               } />
               <Route path="day2" element={
                 <div className="blog-content">
-                  <Link to="/blog">← Back</Link>
+                  <SoundButton as="a" href="/blog" className="back-link" onClick={handleBackClick}>← Back</SoundButton>
                   <h2>Day 2: Exploring Olongapo's Rich History Through Art</h2>
                   <p className="blog-date">April 8, 2025</p>
                   <div className="blog-post">
@@ -112,32 +229,32 @@ function App() {
                     <h3>Historical Paintings of Olongapo</h3>
                     <p>The first part of our journey took us through a collection of historical paintings that depict Olongapo's early days. These artworks show the traditional way of life, the fishing communities, and the natural beauty of the area before modernization.</p>
                     <div className="blog-gallery">
-                      <img src="/assets/day2/day2 (1).jpg" alt="Historical painting of Olongapo" />
-                      <img src="/assets/day2/day2 (2).jpg" alt="Traditional fishing village scene" />
-                      <img src="/assets/day2/day2 (3).jpg" alt="Early settlement artwork" />
+                      <img src={day2Image1} alt="Historical painting of Olongapo" />
+                      <img src={day2Image2} alt="Traditional fishing village scene" />
+                      <img src={day2Image3} alt="Early settlement artwork" />
                     </div>
 
                     <h3>Artistic Evolution</h3>
                     <p>As we moved through the exhibition, we saw how the art evolved to reflect the changes in Olongapo's landscape and society. The paintings showed the transition from rural to urban, the influence of different cultures, and the city's growth over time.</p>
                     <div className="blog-gallery">
-                      <img src="/assets/day2/day2 (4).jpg" alt="Urban development artwork" />
-                      <img src="/assets/day2/day2 (5).jpg" alt="Cultural fusion painting" />
-                      <img src="/assets/day2/day2 (6).jpg" alt="Modern cityscape art" />
+                      <img src={day2Image4} alt="Urban development artwork" />
+                      <img src={day2Image5} alt="Cultural fusion painting" />
+                      <img src={day2Image6} alt="Modern cityscape art" />
                     </div>
 
                     <h3>Subic Bay Connection</h3>
                     <p>The artworks also highlighted Olongapo's connection to Subic Bay, showing how the natural harbor influenced the city's development and became an integral part of its identity.</p>
                     <div className="blog-gallery">
-                      <img src="/assets/day2/day2 (7).jpg" alt="Subic Bay harbor painting" />
-                      <img src="/assets/day2/day2 (8).jpg" alt="Maritime history artwork" />
-                      <img src="/assets/day2/day2 (9).jpg" alt="Coastal community scene" />
+                      <img src={day2Image7} alt="Subic Bay harbor painting" />
+                      <img src={day2Image8} alt="Maritime history artwork" />
+                      <img src={day2Image9} alt="Coastal community scene" />
                     </div>
 
                     <h3>Modern Interpretations</h3>
                     <p>The exhibition concluded with contemporary artworks that reinterpret Olongapo's history through modern artistic styles, showing how the city's past continues to inspire new generations of artists.</p>
                     <div className="blog-gallery">
-                      <img src="/assets/day2/day2 (10).jpg" alt="Contemporary historical art" />
-                      <img src="/assets/day2/day2 (11).jpg" alt="Modern interpretation of history" />
+                      <img src={day2Image10} alt="Contemporary historical art" />
+                      <img src={day2Image11} alt="Modern interpretation of history" />
                     </div>
 
                     <h3>Highlights of the Day</h3>
@@ -154,7 +271,7 @@ function App() {
               } />
               <Route path="day3" element={
                 <div className="blog-content">
-                  <Link to="/blog">← Back</Link>
+                  <SoundButton as="a" href="/blog" className="back-link" onClick={handleBackClick}>← Back</SoundButton>
                   <h2>Day 3: Exploring Manila's Cultural Heritage</h2>
                   <p className="blog-date">April 9, 2025</p>
                   <div className="blog-post">
@@ -163,23 +280,23 @@ function App() {
                     <h3>National Museum Complex</h3>
                     <p>Our first stop was the National Museum Complex, where we explored various exhibits showcasing the Philippines' rich history and cultural heritage.</p>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day3/National meuseum (1).jpg" alt="National Museum exterior" />
-                      <img src="/src/assets/day3/National meuseum (2).jpg" alt="Historical artifacts" />
-                      <img src="/src/assets/day3/National meuseum (3).jpg" alt="Cultural exhibits" />
+                      <img src={day3Image1} alt="National Museum exterior" />
+                      <img src={day3Image2} alt="Historical artifacts" />
+                      <img src={day3Image3} alt="Cultural exhibits" />
                     </div>
 
                     <h3>Presidential Cars Museum</h3>
                     <p>Next, we visited the Presidential Cars Museum, which houses a collection of vehicles used by Philippine presidents throughout history.</p>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day3/Presidential cars.jpg" alt="Presidential vehicles" />
+                      <img src={day3Image4} alt="Presidential vehicles" />
                     </div>
 
                     <h3>Manuel Quezon Memorial</h3>
                     <p>The day concluded with a visit to the Manuel Quezon Memorial, dedicated to the second President of the Philippines.</p>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day3/manuel quezon (1).jpg" alt="Quezon Memorial" />
-                      <img src="/src/assets/day3/manuel quezon (2).jpg" alt="Historical exhibits" />
-                      <img src="/src/assets/day3/manuel quezon (3).jpg" alt="Memorial grounds" />
+                      <img src={day3Image5} alt="Quezon Memorial" />
+                      <img src={day3Image6} alt="Historical exhibits" />
+                      <img src={day3Image7} alt="Memorial grounds" />
                     </div>
 
                     <h3>Highlights of the Day</h3>
@@ -196,7 +313,7 @@ function App() {
               } />
               <Route path="day4" element={
                 <div className="blog-content">
-                  <Link to="/blog">← Back</Link>
+                  <SoundButton as="a" href="/blog" className="back-link" onClick={handleBackClick}>← Back</SoundButton>
                   <h2>Day 4: Exploring High-Tech Innovations</h2>
                   <p className="blog-date">April 10, 2025</p>
                   <div className="blog-post">
@@ -205,17 +322,17 @@ function App() {
                     <h3>High-Tech Exhibition</h3>
                     <p>We visited a high-tech exhibition showcasing the latest advancements in various fields, from artificial intelligence to sustainable energy solutions.</p>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day4/Hightech (1).jpg" alt="High-tech exhibit" />
-                      <img src="/src/assets/day4/Hightech (2).jpg" alt="Innovation showcase" />
-                      <img src="/src/assets/day4/Hightech (3).jpg" alt="Technology display" />
+                      <img src={day4Image1} alt="High-tech exhibit" />
+                      <img src={day4Image2} alt="Innovation showcase" />
+                      <img src={day4Image3} alt="Technology display" />
                     </div>
 
                     <h3>Interactive Demonstrations</h3>
                     <p>The exhibition featured interactive demonstrations that allowed visitors to experience the technology firsthand.</p>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day4/Hightech (4).jpg" alt="Interactive tech demo" />
-                      <img src="/src/assets/day4/Hightech (5).jpg" alt="Hands-on experience" />
-                      <img src="/src/assets/day4/Hightech (6).jpg" alt="Technology in action" />
+                      <img src={day4Image4} alt="Interactive tech demo" />
+                      <img src={day4Image5} alt="Hands-on experience" />
+                      <img src={day4Image6} alt="Technology in action" />
                     </div>
 
                     <h3>Highlights of the Day</h3>
@@ -232,7 +349,7 @@ function App() {
               } />
               <Route path="day5" element={
                 <div className="blog-content">
-                  <Link to="/blog">← Back</Link>
+                  <SoundButton as="a" href="/blog" className="back-link" onClick={handleBackClick}>← Back</SoundButton>
                   <h2>Day 5: Exploring Urban Transportation</h2>
                   <p className="blog-date">April 11, 2025</p>
                   <div className="blog-post">
@@ -241,24 +358,24 @@ function App() {
                     <h3>LRT System</h3>
                     <p>We started with a tour of the Light Rail Transit (LRT) system, one of Manila's primary modes of public transportation.</p>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day5/lrt (1).jpg" alt="LRT station" />
-                      <img src="/src/assets/day5/lrt (2).jpg" alt="Train interior" />
-                      <img src="/src/assets/day5/lrt (3).jpg" alt="Platform view" />
+                      <img src={day5Image1} alt="LRT station" />
+                      <img src={day5Image2} alt="Train interior" />
+                      <img src={day5Image3} alt="Platform view" />
                     </div>
 
                     <h3>Traffic Engineering</h3>
                     <p>Next, we visited traffic management centers and learned about the city's traffic engineering solutions.</p>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day5/traffic engineering (1).jpg" alt="Traffic control center" />
-                      <img src="/src/assets/day5/traffic engineering (2).jpg" alt="Traffic management" />
+                      <img src={day5Image8} alt="Traffic control center" />
+                      <img src={day5Image9} alt="Traffic management" />
                     </div>
 
                     <h3>More LRT Views</h3>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day5/lrt (4).jpg" alt="LRT tracks" />
-                      <img src="/src/assets/day5/lrt (5).jpg" alt="Station architecture" />
-                      <img src="/src/assets/day5/lrt (6).jpg" alt="Passenger flow" />
-                      <img src="/src/assets/day5/lrt (7).jpg" alt="Urban landscape" />
+                      <img src={day5Image4} alt="LRT tracks" />
+                      <img src={day5Image5} alt="Station architecture" />
+                      <img src={day5Image6} alt="Passenger flow" />
+                      <img src={day5Image7} alt="Urban landscape" />
                     </div>
 
                     <h3>Highlights of the Day</h3>
@@ -275,7 +392,7 @@ function App() {
               } />
               <Route path="day6" element={
                 <div className="blog-content">
-                  <Link to="/blog">← Back</Link>
+                  <SoundButton as="a" href="/blog" className="back-link" onClick={handleBackClick}>← Back</SoundButton>
                   <h2>Day 6: Exploring Baguio's Cultural and Natural Treasures</h2>
                   <p className="blog-date">April 12, 2025</p>
                   <div className="blog-post">
@@ -284,35 +401,35 @@ function App() {
                     <h3>Strawberry Farm</h3>
                     <p>Our day began at the Strawberry Farm, where we learned about local agriculture and enjoyed the fresh produce.</p>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day6/strawberry farm.jpg" alt="Strawberry fields" />
+                      <img src={day6Image1} alt="Strawberry fields" />
                     </div>
 
                     <h3>Chinese Bell Church</h3>
                     <p>Next, we visited the Chinese Bell Church, a beautiful temple that showcases the city's cultural diversity.</p>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day6/chinese bell church (1).jpg" alt="Bell Church entrance" />
-                      <img src="/src/assets/day6/chinese bell church (2).jpg" alt="Temple architecture" />
-                      <img src="/src/assets/day6/chinese bell church (3).jpg" alt="Cultural artifacts" />
+                      <img src={day6Image2} alt="Bell Church entrance" />
+                      <img src={day6Image3} alt="Temple architecture" />
+                      <img src={day6Image4} alt="Cultural artifacts" />
                     </div>
 
                     <h3>Minesview Park</h3>
                     <p>We then visited Minesview Park, which offers stunning panoramic views of the surrounding mountains.</p>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day6/minesview (1).jpg" alt="Minesview panorama" />
-                      <img src="/src/assets/day6/minesview (2).jpg" alt="Mountain views" />
+                      <img src={day6Image7} alt="Minesview panorama" />
+                      <img src={day6Image8} alt="Mountain views" />
                     </div>
 
                     <h3>Philippine Military Academy</h3>
                     <p>Our final stop was the Philippine Military Academy, where we learned about its history and importance.</p>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day6/PMA (1).jpg" alt="PMA campus" />
-                      <img src="/src/assets/day6/PMA (2).jpg" alt="Academy grounds" />
+                      <img src={day6Image9} alt="PMA campus" />
+                      <img src={day6Image10} alt="Academy grounds" />
                     </div>
 
                     <h3>More Views of Chinese Bell Church</h3>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day6/chinese bell church (4).jpg" alt="Temple details" />
-                      <img src="/src/assets/day6/chinese bell church (5).jpg" alt="Cultural elements" />
+                      <img src={day6Image5} alt="Temple details" />
+                      <img src={day6Image6} alt="Cultural elements" />
                     </div>
 
                     <h3>Highlights of the Day</h3>
@@ -329,7 +446,7 @@ function App() {
               } />
               <Route path="day7" element={
                 <div className="blog-content">
-                  <Link to="/blog">← Back</Link>
+                  <SoundButton as="a" href="/blog" className="back-link" onClick={handleBackClick}>← Back</SoundButton>
                   <h2>Day 7: Farewell to Luzon - A Journey to Remember</h2>
                   <p className="blog-date">April 13, 2025</p>
                   <div className="blog-post">
@@ -338,7 +455,7 @@ function App() {
                     <h3>Final Reflections</h3>
                     <p>Looking back at our week of exploration, we've witnessed the rich tapestry of Luzon's history, culture, and natural beauty. From the historical walls of Intramuros to the modern innovations in Manila, each day brought new discoveries and insights.</p>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day7/day7 (1).jpg" alt="Scenic view" />
+                      <img src={day7Image1} alt="Scenic view" />
                     </div>
 
                     <h3>Memorable Highlights</h3>
@@ -351,13 +468,13 @@ function App() {
                       <li>Witnessing the blend of tradition and modernity</li>
                     </ul>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day7/day7 (2).jpg" alt="Cultural landmark" />
+                      <img src={day7Image2} alt="Cultural landmark" />
                     </div>
 
                     <h3>Final Moments</h3>
                     <p>As we prepare to leave Luzon, we take one last look at the beautiful landscapes and vibrant cities that have been our home for the past week. The memories we've created will stay with us forever.</p>
                     <div className="blog-gallery">
-                      <img src="/src/assets/day7/day7 (3).jpg" alt="Farewell view" />
+                      <img src={day7Image3} alt="Farewell view" />
                     </div>
 
                     <h3>Looking Forward</h3>

@@ -3,8 +3,12 @@
 import { useState, useEffect } from "react"
 import "./Header.css"
 import profileImage from "../images/profile.png"
+import SoundButton from "./SoundButton"
+import { playRandomSound } from "../utils/soundEffects"
+import { useNavigate } from "react-router-dom"
 
 function Header() {
+  const navigate = useNavigate()
   const [scrolled, setScrolled] = useState(false)
   const [showModal, setShowModal] = useState(false)
   const [fadeOut, setFadeOut] = useState(false)
@@ -39,6 +43,11 @@ function Header() {
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault()
+    
+    // Play sound first
+    playRandomSound()
+    
+    // Then handle navigation
     const targetElement = document.getElementById(targetId)
     if (targetElement) {
       const headerOffset = 80 // Adjust this value based on your header height
@@ -50,6 +59,13 @@ function Header() {
         behavior: "smooth"
       })
     }
+    setMobileMenuOpen(false)
+  }
+
+  const handleBlogClick = (e) => {
+    e.preventDefault()
+    playRandomSound()
+    navigate('/blog')
     setMobileMenuOpen(false)
   }
 
@@ -66,31 +82,32 @@ function Header() {
         </div>
 
         <nav>
-          <a href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a>
-          <a href="#about" onClick={(e) => handleNavClick(e, 'about')}>About</a>
-          <a href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skills</a>
-          <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</a>
-          <a href="#career-goals" onClick={(e) => handleNavClick(e, 'career-goals')}>Goals</a>
-          <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a>
-          <a href="/blog">Blog</a>
+          <SoundButton as="a" href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</SoundButton>
+          <SoundButton as="a" href="#about" onClick={(e) => handleNavClick(e, 'about')}>About</SoundButton>
+          <SoundButton as="a" href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skills</SoundButton>
+          <SoundButton as="a" href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</SoundButton>
+          <SoundButton as="a" href="#career-goals" onClick={(e) => handleNavClick(e, 'career-goals')}>Goals</SoundButton>
+          <SoundButton as="a" href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</SoundButton>
+          <SoundButton as="a" href="/blog" onClick={handleBlogClick}>Blog</SoundButton>
         </nav>
 
-        <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
+        <SoundButton className="mobile-menu-btn" onClick={toggleMobileMenu}>
           ☰
-        </button>
+        </SoundButton>
       </header>
 
       {/* Mobile Menu */}
       <div className={`mobile-menu ${mobileMenuOpen ? "active" : ""}`}>
-        <button className="close-menu" onClick={toggleMobileMenu}>
+        <SoundButton className="close-menu" onClick={toggleMobileMenu}>
           ✕
-        </button>
-        <a href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a>
-        <a href="#about" onClick={(e) => handleNavClick(e, 'about')}>About</a>
-        <a href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skills</a>
-        <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</a>
-        <a href="#career-goals" onClick={(e) => handleNavClick(e, 'career-goals')}>Goals</a>
-        <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a>
+        </SoundButton>
+        <SoundButton as="a" href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</SoundButton>
+        <SoundButton as="a" href="#about" onClick={(e) => handleNavClick(e, 'about')}>About</SoundButton>
+        <SoundButton as="a" href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skills</SoundButton>
+        <SoundButton as="a" href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</SoundButton>
+        <SoundButton as="a" href="#career-goals" onClick={(e) => handleNavClick(e, 'career-goals')}>Goals</SoundButton>
+        <SoundButton as="a" href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</SoundButton>
+        <SoundButton as="a" href="/blog" onClick={handleBlogClick}>Blog</SoundButton>
       </div>
 
       {/* Profile Image Modal with Fade-in & Fade-out Effect */}

@@ -1,26 +1,18 @@
 import "./About.css"
-import profileImage from "../images/profile.png"
+import SoundButton from "./SoundButton"
 
-function About() {
+const About = () => {
   return (
     <section id="about" className="about">
       <div className="container">
         <div className="about-container">
           <div className="about-image">
-            <img src={profileImage || "/placeholder.svg?height=400&width=400"} alt="Profile" />
+            <img src="/placeholder.svg" alt="About Me" />
           </div>
           <div className="about-content">
             <h2>About Me</h2>
             <p>
-              Hello! I'm a passionate backend developer with a strong foundation in creating scalable, efficient, and
-              secure server-side applications. With expertise in modern backend technologies, databases, and APIs, I
-              focus on optimizing performance and ensuring robust architecture.
-            </p>
-            <p>
-              I strive to deliver clean, maintainable code while working to improve data processing, security, and
-              overall system reliability. Outside of development, I enjoy exploring new technologies, contributing to
-              open-source projects, and diving into books on software architecture to stay up-to-date with industry best
-              practices.
+              I'm a passionate backend developer with a strong foundation in building scalable and efficient server-side applications. My expertise lies in creating robust APIs, optimizing database performance, and implementing secure authentication systems.
             </p>
             <div className="about-info">
               <div className="info-item">
@@ -29,7 +21,7 @@ function About() {
               </div>
               <div className="info-item">
                 <span>Email:</span>
-                <span>contact@example.com</span>
+                <span>christiantan2719@gmail.com</span>
               </div>
               <div className="info-item">
                 <span>Location:</span>
@@ -37,16 +29,16 @@ function About() {
               </div>
               <div className="info-item">
                 <span>Availability:</span>
-                <span>Available for hire</span>
+                <span>Open to Opportunities</span>
               </div>
             </div>
             <div className="about-buttons">
-              <a href="#contact" className="btn">
+              <SoundButton as="a" href="#contact" className="btn">
                 Contact Me
-              </a>
-              <a href="#" className="btn btn-outline">
+              </SoundButton>
+              <SoundButton as="a" href="#" className="btn btn-outline">
                 Download CV
-              </a>
+              </SoundButton>
             </div>
           </div>
         </div>
