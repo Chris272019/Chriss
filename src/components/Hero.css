@@ -7,78 +7,82 @@
   justify-content: center;
   overflow: hidden;
   background: transparent;
+  padding: 1rem;
 }
 
 .hero-content {
   position: relative;
   z-index: 10;
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
 }
 
 .hero-text {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-greeting {
   color: #e5e7eb;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
   font-weight: 400;
-  margin-bottom: -6.5rem;
+  margin-bottom: -3rem;
 }
 
 .particle-text-wrapper {
   position: relative;
   width: 100%;
-  height: min(30vw, 220px);
-  margin-bottom: 1.5rem;
+  height: clamp(120px, 30vw, 220px);
+  margin: 1rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .hero-divider {
-  padding-bottom: 4rem;
+  padding-bottom: clamp(2rem, 4vw, 4rem);
   border: none;
   border-top: 4px solid #1ea7fd;
-  width: 93%;
-  margin: 0px auto 1.5rem auto;
+  width: 90%;
+  margin: 0 auto 1rem auto;
 }
+
 .hero-text h1 {
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   margin-bottom: 1rem;
   color: white;
 }
 
 .subtitle {
-  font-size: 1.5rem;
-  color: #4169E1;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: #4169e1;
   margin-bottom: 1rem;
 }
 
 .description {
-  font-size: 1.15rem;
+  font-size: clamp(0.9rem, 2vw, 1.15rem);
   color: #bfc9db;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 0.5rem;
 }
 
 .cta-buttons {
   display: flex;
-  gap: 1rem;
+  gap: clamp(0.5rem, 2vw, 1rem);
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  flex-wrap: wrap;
 }
 
 .btn {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
   font-weight: 600;
   border-radius: 0.5rem;
   transition: all 0.3s ease;
@@ -87,6 +91,7 @@
   background-color: #1ea7fd;
   color: #fff;
   border: none;
+  min-width: clamp(120px, 30vw, 180px);
 }
 
 .btn:not(.btn-outline):hover {
@@ -108,13 +113,13 @@
 
 .social-links {
   display: flex;
-  gap: 1.5rem;
+  gap: clamp(1rem, 3vw, 1.5rem);
   justify-content: center;
 }
 
 .social-link {
   color: #9ca3af;
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
   transition: all 0.3s ease;
   text-decoration: none;
 }
@@ -124,30 +129,74 @@
   transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
-  .particle-text-wrapper {
-    height: min(18vw, 120px);
-  }
-
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
-
-  .subtitle {
-    font-size: 1.25rem;
-  }
-
-  .description {
-    font-size: 1rem;
+/* Extra small devices (phones, 320px and up) */
+@media (min-width: 320px) {
+  .hero-greeting {
+    margin-bottom: -2rem;
   }
 
   .cta-buttons {
     flex-direction: column;
-    gap: 0.75rem;
+    align-items: center;
   }
 
   .btn {
     width: 100%;
+    max-width: 250px;
   }
 }
 
+/* Small devices (large phones, 480px and up) */
+@media (min-width: 480px) {
+  .hero-greeting {
+    margin-bottom: -3rem;
+  }
+
+  .cta-buttons {
+    flex-direction: row;
+  }
+
+  .btn {
+    width: auto;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .hero-content {
+    padding: 2rem;
+  }
+
+  .hero-greeting {
+    margin-bottom: -4rem;
+  }
+
+  .particle-text-wrapper {
+    margin: 1.5rem 0;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .hero-greeting {
+    margin-bottom: -5rem;
+  }
+
+  .hero-content {
+    padding: 2.5rem;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .hero-greeting {
+    margin-bottom: -6.5rem;
+  }
+}
+
+/* For ultra-wide screens */
+@media (min-width: 1600px) {
+  .hero-content {
+    max-width: 1000px;
+  }
+}

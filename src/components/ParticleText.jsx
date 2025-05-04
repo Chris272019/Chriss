@@ -59,7 +59,7 @@ export default function ParticleText() {
       return fontSize / 48 // Scale factor
     }
 
-    function createParticle(scale) {
+    function createParticle(scale, fontSize = 72) {
       if (!ctx || !canvas || !textImageData) return null
 
       const data = textImageData.data
@@ -73,12 +73,15 @@ export default function ParticleText() {
           // based on its vertical position relative to canvas center
           const isChris = y < canvas.height / 2
 
+          // Particle size scales with fontSize for responsiveness
+          const minSize = fontSize * 0.012;
+          const maxSize = fontSize * 0.025;
           return {
             x: x,
             y: y,
             baseX: x,
             baseY: y,
-            size: Math.random() * 1 + 1.2,
+            size: Math.random() * (maxSize - minSize) + minSize,
             color: "white",
             scatteredColor: isChris ? "#4169E1" : "#32CD32", // Royal Blue for Chris, Lime Green for Backend Developer
             isChris: isChris,
@@ -90,11 +93,11 @@ export default function ParticleText() {
       return null
     }
 
-    function createInitialParticles(scale) {
+    function createInitialParticles(scale, fontSize) {
       const baseParticleCount = 15000 // Much higher density for clarity
       const particleCount = Math.floor(baseParticleCount * Math.sqrt((canvas.width * canvas.height) / (1920 * 1080)))
       for (let i = 0; i < particleCount; i++) {
-        const particle = createParticle(scale)
+        const particle = createParticle(scale, fontSize)
         if (particle) particles.push(particle)
       }
     }
@@ -161,14 +164,22 @@ export default function ParticleText() {
     }
 
     const scale = createTextImage()
-    createInitialParticles(scale)
+    // Pass fontSize to createInitialParticles for responsive particle size
+    const fontSize = isMobile
+      ? Math.max(48, Math.floor(canvas.width * 0.13))
+      : Math.max(72, Math.floor(canvas.width * 0.18));
+    createInitialParticles(scale, fontSize)
     animate(scale)
 
     const handleResize = () => {
       updateCanvasSize()
       const newScale = createTextImage()
+      // Pass fontSize to createInitialParticles for responsive particle size
+      const fontSize = isMobile
+        ? Math.max(48, Math.floor(canvas.width * 0.13))
+        : Math.max(72, Math.floor(canvas.width * 0.18));
       particles = []
-      createInitialParticles(newScale)
+      createInitialParticles(newScale, fontSize)
     }
 
     const handleMove = (x, y) => {

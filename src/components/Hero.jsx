@@ -1,8 +1,7 @@
-import React from 'react';
-import ParticleText from './ParticleText';
-import SoundButton from './SoundButton';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import './Hero.css';
+import ParticleText from "./ParticleText"
+import SoundButton from "./SoundButton"
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"
+import "./Hero.css"
 
 const Hero = () => {
   return (
@@ -27,20 +26,37 @@ const Hero = () => {
           </div>
         </div>
         <div className="social-links">
-          <SoundButton as="a" href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link">
+          <SoundButton
+            as="a"
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link"
+          >
             <FaGithub />
           </SoundButton>
-          <SoundButton as="a" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">
+          <SoundButton
+            as="a"
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link"
+          >
             <FaLinkedin />
           </SoundButton>
-          <SoundButton as="a" href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link">
+          <SoundButton
+            as="a"
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link"
+          >
             <FaTwitter />
           </SoundButton>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
-
+export default Hero
