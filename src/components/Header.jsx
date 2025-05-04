@@ -72,6 +72,7 @@ function Header() {
           <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</a>
           <a href="#career-goals" onClick={(e) => handleNavClick(e, 'career-goals')}>Goals</a>
           <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a>
+          <a href="/blog">Blog</a>
         </nav>
 
         <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
