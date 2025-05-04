@@ -1,0 +1,110 @@
+.carousel {
+  perspective: 1500px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  margin-top: -50px;
+}
+
+.carousel__container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: spinCarousel 10s infinite linear;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel__slide {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transition: transform 1s, opacity 1s;
+}
+
+.carousel__slide img {
+  width: 185%;
+  height: 283%;
+  object-fit: cover;
+  border-radius: 40px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  margin-top: -12rem;
+}
+
+/* Arrange slides in a circular pattern */
+.carousel__slide:nth-child(1) {
+  transform: rotateY(0deg) translateZ(200px);
+}
+.carousel__slide:nth-child(2) {
+  transform: rotateY(60deg) translateZ(200px);
+}
+.carousel__slide:nth-child(3) {
+  transform: rotateY(120deg) translateZ(200px);
+}
+.carousel__slide:nth-child(4) {
+  transform: rotateY(180deg) translateZ(200px);
+}
+.carousel__slide:nth-child(5) {
+  transform: rotateY(240deg) translateZ(200px);
+}
+.carousel__slide:nth-child(6) {
+  transform: rotateY(300deg) translateZ(200px);
+}
+
+/* Add spinning animation */
+@keyframes spinCarousel {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Hover Effect */
+.carousel__slide:hover {
+  transform: scale(1.1) translateZ(220px);
+  z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .carousel {
+    height: 80vh;
+  }
+
+  .carousel__slide {
+    width: 120px;
+    height: 120px;
+  }
+
+  .carousel__slide img {
+    width: 170%;
+    height: 260%;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    height: 60vh;
+  }
+
+  .carousel__slide {
+    width: 100px;
+    height: 100px;
+  }
+
+  .carousel__slide img {
+    width: 160%;
+    height: 240%;
+  }
+}
+

@@ -1,0 +1,85 @@
+.personal-touch {
+  padding: 5rem 0;
+}
+
+.personal-touch-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.personal-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.personal-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.personal-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.personal-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--light);
+}
+
+.personal-card p {
+  color: var(--gray-light);
+  font-size: 1rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.personal-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.personal-card li {
+  margin-bottom: 0.75rem;
+  color: var(--gray-light);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.personal-card li strong {
+  color: var(--light);
+}
+
+@media (max-width: 992px) {
+  .personal-touch-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .personal-touch {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .personal-touch {
+    padding: 3rem 0;
+  }
+
+  .personal-touch-container {
+    grid-template-columns: 1fr;
+  }
+}
+

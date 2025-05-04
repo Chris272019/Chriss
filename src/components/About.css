@@ -1,134 +1,136 @@
-/* About section container */
 .about {
-  min-height: 44vh;
-  padding: 1rem 1rem;
-
-  border: 2px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37); /* Soft shadow for depth */
-  max-width: 31%;
-  width: 90%;
-  margin: auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: rem;
-  backdrop-filter: blur(30px); /* Increased blur for stronger frosted glass effect */
-  transition: transform 0.3s ease; /* Smooth hover effect */
+  padding: 5rem 0;
 }
 
-/* Front of the card - About Me heading */
-/* Flip effect for the card */
-.about-card {
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-image {
   position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.05);
+}
+
+.about-image::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
   width: 100%;
   height: 100%;
-  transform-style: preserve-3d; /* Ensure 3D flip works */
-  transition: transform 0.6s ease-in-out; /* Smooth flip transition */
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  z-index: -1;
 }
 
-/* Front of the card - About Me heading */
-.about-card-front,
-.about-card-back {
+.about-content h2 {
+  margin-bottom: 1.5rem;
+  color: var(--light);
   position: relative;
-  top: 0;
+  display: inline-block;
+}
+
+.about-content h2::after {
+  content: "";
+  position: absolute;
   left: 0;
-  right: 0;
-  bottom: 0;
-  backface-visibility: hidden; /* Hides the back when flipped */
+  bottom: -0.5rem;
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.about-content p {
+  color: var(--gray-light);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.about-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.info-item {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 
-/* Back of the card - Paragraph text */
-.about-card-back {
-  transform: rotateY(180deg); /* Rotate the back by 180deg to flip it */
+.info-item span:first-child {
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
 }
 
-
-
-/* Optional: Add more styling for inner content */
-.about h2 {
-  font-size: 2.5rem; /* Adjusted for Glassmorphism style */
-  color: #ffffff;
-  margin-bottom: -15.8rem;
-  position: relative;
-  display: inline-block;
+.info-item span:last-child {
+  color: var(--gray-light);
 }
 
-.about p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #ffffff;
-  max-width: 80%;
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.5s ease forwards 0.3s;
+.about-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
-/* Back of the card - Paragraph text */
-.about-card-back {
-  transform: rotateY(180deg); /* Rotate the back by 180deg to flip it */
-}
+@media (max-width: 992px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 
-/* Hover effect for the entire card */
-.about:hover .about-card {
-  transform: rotateY(180deg); /* Flips the entire card */
-}
-/* Optional: Add more styling for inner content */
-.about h2 {
-  font-size: 2.5rem; /* Adjusted for Glassmorphism style */
-  color: #ffffff;
-  margin-bottom: -13.8rem;
-  position: relative;
-  display: inline-block;
-}
-
-.about p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #ffffff;
-  max-width: 80%;
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.5s ease forwards 0.3s;
-}
-
-/* Fade in and slide up animation */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .about-image {
+    max-width: 500px;
+    margin: 0 auto;
   }
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
   .about {
-    padding: 2rem 1rem;
+    padding: 4rem 0;
   }
 
-  .about h2 {
-    font-size: 2rem; /* Adjusted font size */
+  .about-info {
+    grid-template-columns: 1fr;
   }
 
-  .about p {
+  .about-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .about-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .about {
+    padding: 3rem 0;
+  }
+
+  .about-content p {
     font-size: 1rem;
-    max-width: 90%;
   }
 }
 
-@media (max-width: 480px) {
-  .about h2 {
-    font-size: 1.8rem; /* Further reduced heading size */
-  }
-
-  .about p {
-    font-size: 0.9rem;
-    max-width: 95%;
-  }
-}

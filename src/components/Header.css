@@ -1,34 +1,47 @@
-/* Base styles for the header */
 .header {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  backdrop-filter: blur(30px);
-  box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
-  position: sticky;
+  padding: 1.5rem 2rem;
+  backdrop-filter: blur(10px);
+  background: rgba(2, 6, 23, 0.8);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   transition: all 0.3s ease;
-  max-width: 1200px; /* Set the max-width for a smaller header */
-  margin: 0 auto; /* Center the header */
-  backdrop-filter: blur(10px); /* Frosted glass effect */
-  border-radius: 10px; /* Rounded corners */
-  border: 2px solid rgba(255, 255, 255, 0.18);
 }
 
-/* Header scroll effect */
+.header.scrolled {
+  padding: 1rem 2rem;
+  background: rgba(2, 6, 23, 0.95);
+}
 
-/* Profile container styles */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--light);
+}
+
+.logo-text span {
+  color: var(--primary);
+}
+
 .profile-container {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   overflow: hidden;
   border-radius: 50%;
-  border: 2px solid #3498db;
+  border: 2px solid var(--primary);
   transition: transform 0.3s ease;
 }
 
@@ -36,73 +49,227 @@
   transform: scale(1.1);
 }
 
-/* Profile picture styles */
 .profile-picture {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Main heading styles */
-h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #2c3e50;
-  margin: 0;
-  transition: color 0.3s ease;
-}
-
-/* Navigation styles */
 nav {
   display: flex;
   gap: 1.5rem;
-  backdrop-filter: blur(10px); /* Frosted glass effect */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
-  margin-left: 0%;
 }
 
-/* Navigation link styles */
 nav a {
   text-decoration: none;
-  color: #34495e;
+  color: var(--light);
   font-weight: 500;
   font-size: 1rem;
   transition: all 0.3s ease;
   position: relative;
-}
-
-nav a:hover {
-  color: #3498db;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  background: transparent;
+  backdrop-filter: blur(0px);
 }
 
 nav a::after {
-  content: '';
+  content: "";
   position: absolute;
-  width: 100%;
+  width: 0;
   height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #3498db;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary);
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+nav a:hover {
+  color: var(--primary);
+  transform: translateY(-1px);
+  background: rgba(14, 165, 233, 0.1);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);
+}
+
+nav a:active {
+  transform: translateY(0);
+  background: rgba(14, 165, 233, 0.2);
 }
 
 nav a:hover::after {
-  transform: scaleX(1);
+  width: 80%;
+  transform: translateX(-50%) scaleX(1);
 }
 
-/* Responsive design */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--light);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--darker);
+  z-index: 999;
+  padding: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+.mobile-menu a {
+  font-size: 1.5rem;
+  color: var(--light);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.mobile-menu a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.mobile-menu a:hover {
+  color: var(--primary);
+  transform: translateX(10px);
+}
+
+.mobile-menu a:hover::after {
+  width: 100%;
+}
+
+.close-menu {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  color: var(--light);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 300px;
+  height: 300px;
+  background: rgba(15, 23, 42, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  z-index: 9999;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  animation: fadeIn 0.3s ease-out forwards;
+  border: 2px solid var(--primary);
+}
+
+.modal-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+.modal.fade-out {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
 @media (max-width: 768px) {
   .header {
-    flex-direction: column;
-    align-items: flex-start;
     padding: 1rem;
-    max-width: 100%; /* Ensure header takes full width on small screens */
   }
 
   nav {
-    margin-top: 1rem;
-    width: 100%;
-    justify-content: space-between;
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
   }
 }
+
+/* Add smooth scroll behavior to the whole page */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adjust this value based on your header height */
+}
+
+/* Add transition effect for sections */
+section {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+section:target {
+  animation: sectionHighlight 1s ease;
+}
+
+@keyframes sectionHighlight {
+  0% {
+    transform: translateY(20px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
