@@ -40,7 +40,7 @@ const Footer = () => {
               <h4>Connect</h4>
               <ul>
                 <li>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/Chris272019" target="_blank" rel="noopener noreferrer">
                     GitHub
                   </a>
                 </li>
@@ -59,7 +59,7 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <div className="footer-social">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/Chris272019" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-github"></i>
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">

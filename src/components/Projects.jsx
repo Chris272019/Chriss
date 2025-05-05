@@ -100,7 +100,7 @@ function Projects() {
         </div>
 
         <div className="projects-cta">
-          <SoundButton as="a" href="https://github.com" target="_blank" rel="noopener noreferrer" className="btn">
+          <SoundButton as="a" href="https://github.com/Chris272019" target="_blank" rel="noopener noreferrer" className="btn">
             View More on GitHub <i className="fas fa-arrow-right"></i>
           </SoundButton>
         </div>
