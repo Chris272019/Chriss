@@ -1,8 +1,16 @@
 import "./About.css"
 import SoundButton from "./SoundButton"
 import profileImage from "../images/profile.png"
+import cvFile from "../assets/docs/cv.pdf"
+import { playRandomSound } from "../utils/soundEffects"
 
 const About = () => {
+  const handleDownloadCV = (e) => {
+    e.preventDefault()
+    playRandomSound()
+    window.open(cvFile, "_blank", "noopener,noreferrer")
+  }
+
   return (
     <section id="about" className="about">
       <div className="container">
@@ -37,8 +45,8 @@ const About = () => {
               <SoundButton as="a" href="#contact" className="btn">
                 Contact Me
               </SoundButton>
-              <SoundButton as="a" href="#" className="btn btn-outline">
-                Download CV
+              <SoundButton as="a" href={cvFile} className="btn btn-outline" onClick={handleDownloadCV}>
+                <i className="fas fa-download"></i> Download CV
               </SoundButton>
             </div>
           </div>
