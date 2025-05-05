@@ -323,8 +323,8 @@ function App() {
                   <div className="blog-post">
                     <p>Today was dedicated to exploring the cutting-edge technology and innovations that are shaping the future of the Philippines.</p>
                     
-                    <h3>Hytec Exhibition</h3>
-                    <p>We visited a Hytec exhibition showcasing the latest advancements in various fields, from artificial intelligence to sustainable energy solutions.</p>
+                    <h3>High-Tech Exhibition</h3>
+                    <p>We visited a high-tech exhibition showcasing the latest advancements in various fields, from artificial intelligence to sustainable energy solutions.</p>
                     <div className="blog-gallery">
                       <img src={day4Image1} alt="Hytec exhibit" />
                       <img src={day4Image2} alt="Innovation showcase" />
