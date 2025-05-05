@@ -1,5 +1,6 @@
 import "./About.css"
 import SoundButton from "./SoundButton"
+import profileImage from "../images/Profile.png"
 
 const About = () => {
   return (
@@ -7,7 +8,7 @@ const About = () => {
       <div className="container">
         <div className="about-container">
           <div className="about-image">
-            <img src="src/images/Profile.png" alt="About Me" />
+            <img src={profileImage} alt="About Me" />
           </div>
           <div className="about-content">
             <h2>About Me</h2>

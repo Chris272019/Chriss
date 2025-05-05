@@ -28,7 +28,7 @@ const Hero = () => {
         <div className="social-links">
           <SoundButton
             as="a"
-            href="https://github.com"
+            href="https://github.com/Chris272019"
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"
@@ -37,7 +37,7 @@ const Hero = () => {
           </SoundButton>
           <SoundButton
             as="a"
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/christian-tan-403048302/"
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"

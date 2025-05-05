@@ -14,6 +14,7 @@ import "./App.css"
 import { Link } from "react-router-dom"
 import SoundButton from "./components/SoundButton"
 import { playRandomSound } from "./utils/soundEffects"
+import Experience from "./components/Experience"
 
 // Import blog images
 import day1Image1 from "./assets/day1/day1 (1).jpg"
@@ -109,6 +110,7 @@ function App() {
                 <Hero />
                 <div className="container">
                   <About />
+                  <Experience />
                   <Skills />
                   <Projects />
                   <CareerGoals />
