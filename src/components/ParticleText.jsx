@@ -46,7 +46,6 @@ export default function ParticleText() {
 
       // Draw "Chris" on first line
       ctx.fillText("Chris", canvas.width / 2, canvas.height / 2 - lineHeight / 2)
-
       // Draw "Backend Developer" on second line
       ctx.font = `700 ${fontSize * 0.8}px sans-serif`
       ctx.fillText("Backend Developer", canvas.width / 2, canvas.height / 2 + lineHeight / 2)

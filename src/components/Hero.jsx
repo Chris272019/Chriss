@@ -8,7 +8,7 @@ const Hero = () => {
     <section id="home" className="hero">
       <div className="hero-content">
         <div className="hero-text">
-          <h2 className="hero-greeting">Hello, I'm</h2>
+          <h3 className="hero-greeting">Hello, I'm</h3>
           <div className="particle-text-wrapper">
             <ParticleText />
           </div>

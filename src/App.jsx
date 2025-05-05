@@ -172,7 +172,7 @@ function App() {
                 <div className="blog-content">
                   <SoundButton as="a" href="/blog" className="back-link" onClick={handleBackClick}>← Back</SoundButton>
                   <h2>Day 1: Exploring Manila's Historical Gems</h2>
-                  <p className="blog-date">March 15, 2024</p>
+                  <p className="blog-date">April 7, 2025</p>
                   <div className="blog-post">
                     <p>Today was an exciting day exploring the rich history of Manila! I visited three iconic landmarks: Intramuros, Fort Santiago, and Rizal Park. Each location offered a unique glimpse into the Philippines' fascinating past.</p>
                     

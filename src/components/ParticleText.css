@@ -18,6 +18,15 @@
   touch-action: none;
 }
 
+.divider-line {
+  padding-bottom: clamp(2rem, 4vw, 4rem);
+  border: none;
+  border-top: 4px solid #1ea7fd;
+  width: 90%;
+
+  margin-top: 1.2em;
+}
+
 .particle-text-info {
   position: absolute;
   bottom: clamp(50px, 10vw, 100px);
