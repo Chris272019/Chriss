@@ -1,6 +1,6 @@
 import "./About.css"
 import SoundButton from "./SoundButton"
-import profileImage from "../images/Profile.png"
+import profileImage from "../images/profile.png"
 
 const About = () => {
   return (
