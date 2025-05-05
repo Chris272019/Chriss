@@ -86,6 +86,7 @@ function Header() {
           <SoundButton as="a" href="#about" onClick={(e) => handleNavClick(e, 'about')}>About</SoundButton>
           <SoundButton as="a" href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skills</SoundButton>
           <SoundButton as="a" href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</SoundButton>
+          <SoundButton as="a" href="#certificates" onClick={(e) => handleNavClick(e, 'certificates')}>Certificates</SoundButton>
           <SoundButton as="a" href="#career-goals" onClick={(e) => handleNavClick(e, 'career-goals')}>Goals</SoundButton>
           <SoundButton as="a" href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</SoundButton>
           <SoundButton as="a" href="/blog" onClick={handleBlogClick}>Blog</SoundButton>
@@ -105,6 +106,7 @@ function Header() {
         <SoundButton as="a" href="#about" onClick={(e) => handleNavClick(e, 'about')}>About</SoundButton>
         <SoundButton as="a" href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skills</SoundButton>
         <SoundButton as="a" href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</SoundButton>
+        <SoundButton as="a" href="#certificates" onClick={(e) => handleNavClick(e, 'certificates')}>Certificates</SoundButton>
         <SoundButton as="a" href="#career-goals" onClick={(e) => handleNavClick(e, 'career-goals')}>Goals</SoundButton>
         <SoundButton as="a" href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</SoundButton>
         <SoundButton as="a" href="/blog" onClick={handleBlogClick}>Blog</SoundButton>
