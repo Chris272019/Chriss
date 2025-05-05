@@ -50,9 +50,9 @@
 }
 
 .hero-divider {
-  padding-bottom: clamp(2rem, 4vw, 4rem);
+  padding-bottom: clamp(2rem, 4vw, 5rem);
   border: none;
-  border-top: 4px solid #1ea7fd;
+  border-top: 4px solid transparent;
   width: min(90%, 600px);
   margin: 0 auto clamp(0.5rem, 2vw, 1rem) auto;
 }
