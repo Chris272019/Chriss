@@ -1,6 +1,7 @@
 import "./Certificates.css"
 import { FaCertificate } from "react-icons/fa"
 import certImage from "../assets/img/certs.jpg"
+import { playRandomSound } from "../utils/soundEffects"
 
 const Certificates = () => {
   const certificates = [
@@ -8,7 +9,7 @@ const Certificates = () => {
       id: 1,
       title: "Data Analysis with Python",
       issuer: "FreeCodeCamp",
-      date: "2024",
+      date: "2025",
       description: "Comprehensive data analysis certification covering Python, pandas, NumPy, and data visualization techniques for effective data analysis and interpretation.",
       link: "https://www.freecodecamp.org/certification/Chrissssy/data-analysis-with-python-v7",
       image: certImage
@@ -17,6 +18,7 @@ const Certificates = () => {
 
   const handleLinkClick = (e, url) => {
     e.preventDefault()
+    playRandomSound()
     window.open(url, "_blank", "noopener,noreferrer")
   }
 
