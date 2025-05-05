@@ -36,8 +36,8 @@ export default function ParticleText() {
 
       // Calculate text size and position
       const fontSize = isMobile
-        ? Math.max(48, Math.floor(canvas.width * 0.13))
-        : Math.max(72, Math.floor(canvas.width * 0.18));
+        ? Math.max(32, Math.floor(canvas.width * 0.09))
+        : Math.max(48, Math.floor(canvas.width * 0.12));
       const lineHeight = fontSize * 1.2
 
       ctx.font = `900 ${fontSize}px sans-serif`
@@ -165,8 +165,8 @@ export default function ParticleText() {
     const scale = createTextImage()
     // Pass fontSize to createInitialParticles for responsive particle size
     const fontSize = isMobile
-      ? Math.max(48, Math.floor(canvas.width * 0.13))
-      : Math.max(72, Math.floor(canvas.width * 0.18));
+      ? Math.max(32, Math.floor(canvas.width * 0.09))
+      : Math.max(48, Math.floor(canvas.width * 0.12));
     createInitialParticles(scale, fontSize)
     animate(scale)
 
@@ -175,8 +175,8 @@ export default function ParticleText() {
       const newScale = createTextImage()
       // Pass fontSize to createInitialParticles for responsive particle size
       const fontSize = isMobile
-        ? Math.max(48, Math.floor(canvas.width * 0.13))
-        : Math.max(72, Math.floor(canvas.width * 0.18));
+        ? Math.max(32, Math.floor(canvas.width * 0.09))
+        : Math.max(48, Math.floor(canvas.width * 0.12));
       particles = []
       createInitialParticles(newScale, fontSize)
     }

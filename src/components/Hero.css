@@ -8,76 +8,91 @@
   overflow: hidden;
   background: transparent;
   padding: 1rem;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .hero-content {
   position: relative;
   z-index: 10;
   text-align: center;
-  padding: 1rem;
-  max-width: 800px;
+  padding: clamp(1rem, 3vw, 2.5rem);
+  max-width: min(800px, 90%);
   width: 100%;
   margin: 0 auto;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .hero-text {
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
 }
 
 .hero-greeting {
   color: #e5e7eb;
   font-size: clamp(1rem, 3vw, 1.5rem);
   font-weight: 400;
-  margin-bottom: -3rem;
+  margin-bottom: clamp(-2rem, -5vw, -6.5rem);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .particle-text-wrapper {
   position: relative;
   width: 100%;
   height: clamp(120px, 30vw, 220px);
-  margin: 1rem 0;
+  margin: clamp(0.5rem, 2vw, 1.5rem) 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .hero-divider {
   padding-bottom: clamp(2rem, 4vw, 4rem);
   border: none;
   border-top: 4px solid #1ea7fd;
-  width: 90%;
-  margin: 0 auto 1rem auto;
+  width: min(90%, 600px);
+  margin: 0 auto clamp(0.5rem, 2vw, 1rem) auto;
 }
 
 .hero-text h1 {
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
   color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .subtitle {
   font-size: clamp(1rem, 3vw, 1.5rem);
   color: #4169e1;
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .description {
   font-size: clamp(0.9rem, 2vw, 1.15rem);
   color: #bfc9db;
-  margin-bottom: clamp(1.5rem, 3vw, 2rem);
-  max-width: 600px;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  max-width: min(600px, 90%);
   margin-left: auto;
   margin-right: auto;
-  padding: 0 0.5rem;
+  padding: 0 clamp(0.25rem, 1vw, 0.5rem);
+  line-height: 1.6;
 }
 
 .cta-buttons {
   display: flex;
   gap: clamp(0.5rem, 2vw, 1rem);
   justify-content: center;
-  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: clamp(1rem, 3vw, 2rem);
   flex-wrap: wrap;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .btn {
@@ -92,11 +107,16 @@
   color: #fff;
   border: none;
   min-width: clamp(120px, 30vw, 180px);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .btn:not(.btn-outline):hover {
   background-color: #0074d9;
   transform: translateY(-2px);
+  -webkit-transform: translateY(-2px);
 }
 
 .btn-outline {
@@ -109,12 +129,15 @@
   background-color: #1ea7fd;
   color: white;
   transform: translateY(-2px);
+  -webkit-transform: translateY(-2px);
 }
 
 .social-links {
   display: flex;
   gap: clamp(1rem, 3vw, 1.5rem);
   justify-content: center;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .social-link {
@@ -122,11 +145,14 @@
   font-size: clamp(1.25rem, 3vw, 1.5rem);
   transition: all 0.3s ease;
   text-decoration: none;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .social-link:hover {
   color: #1ea7fd;
   transform: translateY(-2px);
+  -webkit-transform: translateY(-2px);
 }
 
 /* Extra small devices (phones, 320px and up) */
@@ -198,5 +224,28 @@
 @media (min-width: 1600px) {
   .hero-content {
     max-width: 1000px;
+  }
+}
+
+/* Fix for Safari */
+@supports (-webkit-touch-callout: none) {
+  .hero {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Fix for Firefox */
+@-moz-document url-prefix() {
+  .hero {
+    min-height: 100vh;
+  }
+}
+
+/* Fix for IE11 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .hero {
+    display: -ms-flexbox;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
   }
 }

@@ -16,6 +16,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure proper rendering on all browsers */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 body {
@@ -25,6 +34,8 @@ body {
   color: var(--light);
   background-color: var(--darker);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .App {
@@ -60,10 +71,12 @@ main {
   padding-bottom: 4rem;
 }
 
+/* Fix for Safari flexbox gap */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  width: 100%;
 }
 
 section {
@@ -175,7 +188,7 @@ a:hover {
   transform: translateX(-50%);
 }
 
-/* Responsive styles */
+/* Enhanced responsive breakpoints */
 @media (max-width: 1200px) {
   .container {
     max-width: 960px;
@@ -188,48 +201,83 @@ a:hover {
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
   }
 
   h2 {
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
   }
 }
 
 @media (max-width: 768px) {
   .container {
     max-width: 540px;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  section {
-    padding: 4rem 0;
-  }
-}
-
-@media (max-width: 576px) {
-  .container {
     padding: 0 1rem;
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
   }
 
   h2 {
-    font-size: 1.8rem;
+    font-size: clamp(1.6rem, 3.5vw, 2rem);
   }
 
   section {
     padding: 3rem 0;
   }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 3.5vw, 2rem);
+  }
+
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+  }
+
+  section {
+    padding: 2rem 0;
+  }
+}
+
+/* Fix for iOS momentum scrolling */
+.overflow-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fix for Firefox button padding */
+button {
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Fix for Chrome text rendering */
+.text-rendering {
+  text-rendering: optimizeLegibility;
+}
+
+/* Fix for Safari transform */
+.transform-fix {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* Fix for IE11 flexbox */
+.flex-fix {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 /* Blog Content Styles */
