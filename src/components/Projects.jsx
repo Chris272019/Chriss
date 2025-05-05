@@ -33,8 +33,8 @@ function Projects() {
       description: "A comprehensive blood bank management system with admin dashboard for managing blood donations, inventory, and donor records.",
       technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
       image: bloodbankImage,
-      github: "https://github.com/Chris272019/Capstone-Websites",
-      demo: "https://wh1438978.ispot.cc/admin_capstone/admin_login.php",
+      github: "#",
+      demo: "https://github.com/Chris272019/Capstone-Websites",
     },
     {
       id: 4,
