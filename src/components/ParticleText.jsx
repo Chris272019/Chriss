@@ -46,6 +46,20 @@ export default function ParticleText() {
 
       // Draw "Chris" on first line
       ctx.fillText("Chris", canvas.width / 2, canvas.height / 2 - lineHeight / 2)
+
+      // Draw divider line
+      const dividerY = canvas.height / 2
+      const dividerWidth = fontSize * 8
+      const dividerHeight = 4
+      ctx.fillStyle = "#1ea7fd"
+      ctx.fillRect(
+        canvas.width / 2 - dividerWidth / 2,
+        dividerY - dividerHeight / 2,
+        dividerWidth,
+        dividerHeight
+      )
+      ctx.fillStyle = "white"
+
       // Draw "Backend Developer" on second line
       ctx.font = `700 ${fontSize * 0.8}px sans-serif`
       ctx.fillText("Backend Developer", canvas.width / 2, canvas.height / 2 + lineHeight / 2)
@@ -68,9 +82,11 @@ export default function ParticleText() {
         const y = Math.floor(Math.random() * canvas.height)
 
         if (data[(y * canvas.width + x) * 4 + 3] > 128) {
-          // Determine if the particle is from "Chris" or "Backend Developer"
+          // Determine if the particle is from "Chris", divider, or "Backend Developer"
           // based on its vertical position relative to canvas center
-          const isChris = y < canvas.height / 2
+          const isChris = y < canvas.height / 2 - 20
+          const isDivider = Math.abs(y - canvas.height / 2) < 10
+          const isBackendDev = y > canvas.height / 2 + 20
 
           // Particle size scales with fontSize for responsiveness
           const minSize = fontSize * 0.012;
@@ -82,8 +98,9 @@ export default function ParticleText() {
             baseY: y,
             size: Math.random() * (maxSize - minSize) + minSize,
             color: "white",
-            scatteredColor: isChris ? "#4169E1" : "#32CD32", // Royal Blue for Chris, Lime Green for Backend Developer
+            scatteredColor: isChris ? "#4169E1" : isDivider ? "#1ea7fd" : "#32CD32", // Royal Blue for Chris, Light Blue for divider, Lime Green for Backend Developer
             isChris: isChris,
+            isDivider: isDivider,
             life: Math.random() * 100 + 50,
           }
         }
