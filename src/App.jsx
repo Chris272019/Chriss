@@ -145,7 +145,7 @@ function App() {
                     </div>
                     
                     <div className="timeline-item">
-                      <h3>Day 4: High-Tech Innovations</h3>
+                      <h3>Day 4: Hytec Innovations</h3>
                       <p>Exploring cutting-edge technology and innovations shaping the future of the Philippines.</p>
                       <SoundButton as="a" href="/blog/day4" className="read-more" onClick={(e) => handleBlogLinkClick(e, '/blog/day4')}>Read More →</SoundButton>
                     </div>
