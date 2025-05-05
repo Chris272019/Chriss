@@ -15,6 +15,7 @@ import { Link } from "react-router-dom"
 import SoundButton from "./components/SoundButton"
 import { playRandomSound } from "./utils/soundEffects"
 import Experience from "./components/Experience"
+import Certificates from "./components/Certificates"
 
 // Import blog images
 import day1Image1 from "./assets/day1/day1 (1).jpg"
@@ -113,6 +114,7 @@ function App() {
                   <Experience />
                   <Skills />
                   <Projects />
+                  <Certificates />
                   <CareerGoals />
                   <PersonalTouch />
                   <CallToAction />
@@ -145,7 +147,7 @@ function App() {
                     </div>
                     
                     <div className="timeline-item">
-                      <h3>Day 4: High-Tech Innovations</h3>
+                      <h3>Day 4: Hytec Innovations</h3>
                       <p>Exploring cutting-edge technology and innovations shaping the future of the Philippines.</p>
                       <SoundButton as="a" href="/blog/day4" className="read-more" onClick={(e) => handleBlogLinkClick(e, '/blog/day4')}>Read More →</SoundButton>
                     </div>
@@ -316,15 +318,15 @@ function App() {
               <Route path="day4" element={
                 <div className="blog-content">
                   <SoundButton as="a" href="/blog" className="back-link" onClick={handleBackClick}>← Back</SoundButton>
-                  <h2>Day 4: Exploring High-Tech Innovations</h2>
+                  <h2>Day 4: Exploring Hytec Innovations</h2>
                   <p className="blog-date">April 10, 2025</p>
                   <div className="blog-post">
                     <p>Today was dedicated to exploring the cutting-edge technology and innovations that are shaping the future of the Philippines.</p>
                     
-                    <h3>High-Tech Exhibition</h3>
-                    <p>We visited a high-tech exhibition showcasing the latest advancements in various fields, from artificial intelligence to sustainable energy solutions.</p>
+                    <h3>Hytec Exhibition</h3>
+                    <p>We visited a Hytec exhibition showcasing the latest advancements in various fields, from artificial intelligence to sustainable energy solutions.</p>
                     <div className="blog-gallery">
-                      <img src={day4Image1} alt="High-tech exhibit" />
+                      <img src={day4Image1} alt="Hytec exhibit" />
                       <img src={day4Image2} alt="Innovation showcase" />
                       <img src={day4Image3} alt="Technology display" />
                     </div>
@@ -345,7 +347,7 @@ function App() {
                       <li>Understanding the impact of technology on society</li>
                     </ul>
 
-                    <p>Today's exploration of high-tech innovations was both exciting and educational, showing how technology continues to transform our world and shape our future.</p>
+                    <p>Today's exploration of Hytec innovations was both exciting and educational, showing how technology continues to transform our world and shape our future.</p>
                   </div>
                 </div>
               } />

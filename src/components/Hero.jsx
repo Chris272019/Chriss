@@ -1,9 +1,16 @@
 import ParticleText from "./ParticleText"
 import SoundButton from "./SoundButton"
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"
+import { playRandomSound } from "../utils/soundEffects"
 import "./Hero.css"
 
 const Hero = () => {
+  const handleLinkClick = (e, url) => {
+    e.preventDefault()
+    playRandomSound()
+    window.open(url, "_blank", "noopener,noreferrer")
+  }
+
   return (
     <section id="home" className="hero">
       <div className="hero-content">
@@ -32,6 +39,7 @@ const Hero = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"
+            onClick={(e) => handleLinkClick(e, "https://github.com/Chris272019")}
           >
             <FaGithub />
           </SoundButton>
@@ -41,6 +49,7 @@ const Hero = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"
+            onClick={(e) => handleLinkClick(e, "https://www.linkedin.com/in/christian-tan-403048302/")}
           >
             <FaLinkedin />
           </SoundButton>
@@ -50,6 +59,7 @@ const Hero = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"
+            onClick={(e) => handleLinkClick(e, "https://twitter.com")}
           >
             <FaTwitter />
           </SoundButton>
