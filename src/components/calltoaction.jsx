@@ -4,7 +4,7 @@ import { useState } from "react"
 import "./calltoaction.css"
 import emailjs from "@emailjs/browser"
 import SoundButton from "./SoundButton"
-import { playRandomSound } from "../utils/soundEffects"
+import { playRandomSound, playSentSound } from "../utils/soundEffects"
 
 // Initialize EmailJS with your public key
 emailjs.init("Ejdp3wZN6QUwoua2Y")
@@ -57,6 +57,8 @@ const CallToAction = () => {
           subject: "",
           message: "",
         })
+        // Play sent sound when email is successfully sent
+        playSentSound()
       } else {
         throw new Error("Failed to send message")
       }
