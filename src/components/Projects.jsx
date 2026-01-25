@@ -25,7 +25,7 @@ function Projects() {
       technologies: ["React", "CSS", "JavaScript", "Netlify"],
       image: scicalImage,
       github: "https://github.com/Chris272019/SCI_CAL",
-      demo: "https://app.netlify.com/sites/scicalcu/overview",
+      demo: "https://scicalcu.netlify.app/",
     },
     {
       id: 3,
