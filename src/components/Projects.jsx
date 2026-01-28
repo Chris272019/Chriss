@@ -7,7 +7,7 @@ import SoundButton from "./SoundButton"
 import { playRandomSound } from "../utils/soundEffects"
 import pageImage from "../assets/img/page.png"
 import fashionImage from "../assets/img/fashion.png"
-import ecommerceImage from "../assets/img/E-commerce.jpg"
+import realImage from "../assets/img/real.png"
 
 function Projects() {
   // Sample project data
@@ -47,6 +47,33 @@ function Projects() {
       image: ecommerceImage,
       github: "#",
       demo: "https://wh1438978.ispot.cc/dunngeonloots/Index.html",
+    
+    {
+      id: 5,
+      title: "Property Page",
+      description: "A bespoke digital showcase designed for the ultra-luxury real estate market. This template merges cinematic visuals with a minimalist 'light-mode' aesthetic, utilizing fluid typography and gold accents to mirror the exclusivity of high-end estates.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      image: ecommerceImage,
+      github: "#",
+      demo: "https://property-pafe.netlify.app/",
+    },
+    {
+      id: 6,
+      title: "Real-Estate",
+      description: "A premier dark-themed luxury real estate landing page that blends cinematic architectural visuals with high-end typography to create an immersive, gallery-like experience for elite property listings.,
+      technologies: ["HTML", "CSS", "JavaScript"],
+      image: ecommerceImage,
+      github: "#",
+      demo: "https://estate142019.netlify.app/",
+    },
+    {
+      id: 7,
+      title: "Vissual-Fashion",
+      description: "VISSUAL is a contemporary fashion house defined by structural minimalism and a monochromatic soul. Borrowing from the clean lines of modern architecture, the brand focuses on 'permanent collections' rather than seasonal trends—offering high-contrast, silhouette-driven pieces designed for the modern minimalist.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      image: ecommerceImage,
+      github: "#",
+      demo: "https://fashion1419.netlify.app/",
     }
   ]
 
