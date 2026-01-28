@@ -47,22 +47,22 @@ function Projects() {
       image: ecommerceImage,
       github: "#",
       demo: "https://wh1438978.ispot.cc/dunngeonloots/Index.html",
-    
+    }, // Fixed: Added closing brace and comma
     {
       id: 5,
       title: "Property Page",
       description: "A bespoke digital showcase designed for the ultra-luxury real estate market. This template merges cinematic visuals with a minimalist 'light-mode' aesthetic, utilizing fluid typography and gold accents to mirror the exclusivity of high-end estates.",
       technologies: ["HTML", "CSS", "JavaScript"],
-      image: ecommerceImage,
+      image: pageImage, // Fixed: Updated to pageImage
       github: "#",
       demo: "https://property-pafe.netlify.app/",
     },
     {
       id: 6,
       title: "Real-Estate",
-      description: "A premier dark-themed luxury real estate landing page that blends cinematic architectural visuals with high-end typography to create an immersive, gallery-like experience for elite property listings.,
+      description: "A premier dark-themed luxury real estate landing page that blends cinematic architectural visuals with high-end typography to create an immersive, gallery-like experience for elite property listings.", // Fixed: Added closing quote
       technologies: ["HTML", "CSS", "JavaScript"],
-      image: ecommerceImage,
+      image: realImage, // Fixed: Updated to realImage
       github: "#",
       demo: "https://estate142019.netlify.app/",
     },
@@ -71,7 +71,7 @@ function Projects() {
       title: "Vissual-Fashion",
       description: "VISSUAL is a contemporary fashion house defined by structural minimalism and a monochromatic soul. Borrowing from the clean lines of modern architecture, the brand focuses on 'permanent collections' rather than seasonal trends—offering high-contrast, silhouette-driven pieces designed for the modern minimalist.",
       technologies: ["HTML", "CSS", "JavaScript"],
-      image: ecommerceImage,
+      image: fashionImage, // Fixed: Updated to fashionImage
       github: "#",
       demo: "https://fashion1419.netlify.app/",
     }
@@ -147,4 +147,3 @@ function Projects() {
 }
 
 export default Projects
-
