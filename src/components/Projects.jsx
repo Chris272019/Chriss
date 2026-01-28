@@ -5,6 +5,9 @@ import pokemonImage from "../assets/img/pokemon.jpg"
 import ecommerceImage from "../assets/img/E-commerce.jpg"
 import SoundButton from "./SoundButton"
 import { playRandomSound } from "../utils/soundEffects"
+import pageImage from "../assets/img/page.png"
+import fashionImage from "../assets/img/fashion.png"
+import ecommerceImage from "../assets/img/E-commerce.jpg"
 
 function Projects() {
   // Sample project data
